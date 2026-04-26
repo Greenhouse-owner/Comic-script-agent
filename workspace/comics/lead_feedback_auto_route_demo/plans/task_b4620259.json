@@ -1,0 +1,44 @@
+{
+  "task_id": "task_b4620259",
+  "agent": "qa_bot",
+  "project_id": "lead_feedback_auto_route_demo",
+  "chapter_id": "ch01",
+  "task_type": "qa_review",
+  "status": "approved",
+  "steps": [
+    {
+      "id": "step_1",
+      "description": "读取剧本",
+      "tool": "read_file",
+      "inputs": {
+        "file_path": "lead_feedback_auto_route_demo/chapters/ch01/script.md"
+      },
+      "expected_output": "script.md"
+    },
+    {
+      "id": "step_2",
+      "description": "读取分镜",
+      "tool": "read_file",
+      "inputs": {
+        "file_path": "lead_feedback_auto_route_demo/chapters/ch01/storyboard.md"
+      },
+      "expected_output": "storyboard.md"
+    },
+    {
+      "id": "step_3",
+      "description": "写入 QA 报告",
+      "tool": "write_file",
+      "inputs": {
+        "file_path": "lead_feedback_auto_route_demo/qa/ch01_report.md"
+      },
+      "expected_output": "QA report"
+    }
+  ],
+  "risk_checklist": [
+    "检查角色一致性",
+    "检查分镜一致性",
+    "检查跨文件一致性"
+  ],
+  "requires_user_approval": false,
+  "created_at": "2026-04-26T13:28:08.498569"
+}

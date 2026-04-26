@@ -1,0 +1,1435 @@
+{
+  "task_3a6d481a": {
+    "id": "task_3a6d481a",
+    "title": "设计主角和主要配角",
+    "status": "in_progress",
+    "assignee": "architect_bot",
+    "depends_on": [],
+    "metadata": {
+      "project_id": "legend_of_nine_tails"
+    },
+    "created_at": "2026-04-19T20:13:31.955850",
+    "updated_at": "2026-04-19T21:37:23.942791"
+  },
+  "task_d42cc220": {
+    "id": "task_d42cc220",
+    "title": "编写故事大纲",
+    "status": "blocked",
+    "assignee": "architect_bot",
+    "depends_on": [
+      "task_3a6d481a"
+    ],
+    "metadata": {
+      "project_id": "legend_of_nine_tails"
+    },
+    "created_at": "2026-04-19T20:13:40.713085",
+    "updated_at": "2026-04-19T20:13:40.713102"
+  },
+  "task_a6424ffa": {
+    "id": "task_a6424ffa",
+    "title": "创建故事大纲",
+    "status": "error",
+    "assignee": "architect_bot",
+    "depends_on": [],
+    "metadata": {
+      "project_id": "nine_tailed_fox_boy"
+    },
+    "created_at": "2026-04-19T21:49:03.727064",
+    "updated_at": "2026-04-20T16:11:48.018953",
+    "result": {
+      "type": "task_result",
+      "task_id": "task_a6424ffa",
+      "assignee": "architect_bot",
+      "title": "创建故事大纲",
+      "success": false,
+      "error": "Error code: 503 - {'error': {'message': '', 'localized_message': '', 'type': 'shell_api_error', 'param': '', 'code': 'model_not_found'}}",
+      "metadata": {
+        "project_id": "nine_tailed_fox_boy"
+      }
+    }
+  },
+  "task_54147d8a": {
+    "id": "task_54147d8a",
+    "title": "创建角色设定",
+    "status": "error",
+    "assignee": "architect_bot",
+    "depends_on": [],
+    "metadata": {
+      "project_id": "nine_tailed_fox_boy"
+    },
+    "created_at": "2026-04-19T21:49:03.727685",
+    "updated_at": "2026-04-20T16:11:48.019908",
+    "result": {
+      "type": "task_result",
+      "task_id": "task_54147d8a",
+      "assignee": "architect_bot",
+      "title": "创建角色设定",
+      "success": false,
+      "error": "Error code: 503 - {'error': {'message': '', 'localized_message': '', 'type': 'shell_api_error', 'param': '', 'code': 'model_not_found'}}",
+      "metadata": {
+        "project_id": "nine_tailed_fox_boy"
+      }
+    }
+  },
+  "task_657259e7": {
+    "id": "task_657259e7",
+    "title": "设计《sci_fi_passion_01》的初步故事大纲和核心角色设定",
+    "status": "error",
+    "assignee": "architect_bot",
+    "depends_on": [],
+    "metadata": {},
+    "created_at": "2026-04-20T18:25:07.946233",
+    "updated_at": "2026-04-20T18:39:35.488343",
+    "result": {
+      "type": "task_result",
+      "task_id": "task_657259e7",
+      "assignee": "architect_bot",
+      "title": "设计《sci_fi_passion_01》的初步故事大纲和核心角色设定",
+      "success": false,
+      "error": "<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad Gateway</h1></center>\r\n<hr><center>nginx/1.24.0 (Ubuntu)</center>\r\n</body>\r\n</html>",
+      "metadata": {}
+    }
+  },
+  "task_ddd246b4": {
+    "id": "task_ddd246b4",
+    "title": "设计《sci_fi_passion_01》的初步故事大纲和核心角色设定",
+    "status": "pending",
+    "assignee": "architect_bot",
+    "depends_on": [],
+    "metadata": {
+      "project_id": "sci_fi_passion_01"
+    },
+    "created_at": "2026-04-20T18:39:32.397776",
+    "updated_at": "2026-04-20T18:39:32.397818"
+  },
+  "task_0185f334": {
+    "id": "task_0185f334",
+    "title": "Director 交付 ch01",
+    "status": "in_progress",
+    "assignee": "director_bot",
+    "depends_on": [],
+    "metadata": {
+      "protocol_version": "v1",
+      "task_type": "director_delivery",
+      "project_id": "protocol_feedback_event_demo",
+      "chapter_id": "ch01",
+      "goal": "基于 Architect 交付生成高质量分镜",
+      "inputs": [
+        "protocol_feedback_event_demo/chapters/ch01/script.md"
+      ],
+      "required_inputs": [
+        "protocol_feedback_event_demo/chapters/ch01/script.md"
+      ],
+      "state_inputs": {},
+      "quality_bar": [
+        "严格对应 script.md",
+        "视觉锚点一致",
+        "场景道具与氛围一致",
+        "镜头语言清楚"
+      ],
+      "deliverables": [
+        "protocol_feedback_event_demo/chapters/ch01/storyboard.md"
+      ],
+      "required_deliverables": [
+        "protocol_feedback_event_demo/chapters/ch01/storyboard.md"
+      ],
+      "qa_target": "qa_bot",
+      "submission_target": "qa_bot"
+    },
+    "created_at": "2026-04-23T00:17:19.141330",
+    "updated_at": "2026-04-26T13:08:57.292473"
+  },
+  "task_81862913": {
+    "id": "task_81862913",
+    "title": "QA 验收 ch01",
+    "status": "error",
+    "assignee": "qa_bot",
+    "depends_on": [],
+    "metadata": {
+      "protocol_version": "v1",
+      "task_type": "qa_review",
+      "project_id": "protocol_feedback_event_demo",
+      "chapter_id": "ch01",
+      "architect_submission": {
+        "type": "handoff",
+        "project_id": "protocol_feedback_event_demo",
+        "chapter_id": "ch01",
+        "deliverables": [
+          "protocol_feedback_event_demo/chapters/ch01/script.md"
+        ],
+        "summary": "architect handoff done",
+        "state_inputs": {}
+      },
+      "director_submission": {
+        "type": "submission",
+        "project_id": "protocol_feedback_event_demo",
+        "chapter_id": "ch01",
+        "deliverables": [
+          "protocol_feedback_event_demo/chapters/ch01/storyboard.md"
+        ],
+        "summary": "director submitted"
+      },
+      "review_axes": [
+        "architect_quality",
+        "director_quality",
+        "cross_consistency"
+      ],
+      "required_deliverables": [
+        "protocol_feedback_event_demo/qa/ch01_report.md"
+      ]
+    },
+    "created_at": "2026-04-23T00:17:19.141981",
+    "updated_at": "2026-04-26T13:28:08.476371",
+    "result": {
+      "success": false,
+      "error_type": "protocol_error",
+      "error": "📄 File not found: protocol_feedback_event_demo/chapters/ch01/script.md"
+    }
+  },
+  "task_13bcdf4e": {
+    "id": "task_13bcdf4e",
+    "title": "Director 交付 ch01",
+    "status": "error",
+    "assignee": "director_bot",
+    "depends_on": [],
+    "metadata": {
+      "protocol_version": "v1",
+      "task_type": "director_delivery",
+      "project_id": "protocol_feedback_event_demo",
+      "chapter_id": "ch01",
+      "goal": "基于 Architect 交付生成高质量分镜",
+      "inputs": [
+        "protocol_feedback_event_demo/chapters/ch01/script.md"
+      ],
+      "required_inputs": [
+        "protocol_feedback_event_demo/chapters/ch01/script.md"
+      ],
+      "state_inputs": {},
+      "quality_bar": [
+        "严格对应 script.md",
+        "视觉锚点一致",
+        "场景道具与氛围一致",
+        "镜头语言清楚"
+      ],
+      "deliverables": [
+        "protocol_feedback_event_demo/chapters/ch01/storyboard.md"
+      ],
+      "required_deliverables": [
+        "protocol_feedback_event_demo/chapters/ch01/storyboard.md"
+      ],
+      "qa_target": "qa_bot",
+      "submission_target": "qa_bot"
+    },
+    "created_at": "2026-04-23T00:31:30.692528",
+    "updated_at": "2026-04-26T13:13:13.862313",
+    "result": {
+      "type": "task_result",
+      "task_id": "task_13bcdf4e",
+      "assignee": "director_bot",
+      "title": "Director 交付 ch01",
+      "success": false,
+      "error": "📄 File not found: protocol_feedback_event_demo/chapters/ch01/script.md",
+      "metadata": {
+        "protocol_version": "v1",
+        "task_type": "director_delivery",
+        "project_id": "protocol_feedback_event_demo",
+        "chapter_id": "ch01",
+        "goal": "基于 Architect 交付生成高质量分镜",
+        "inputs": [
+          "protocol_feedback_event_demo/chapters/ch01/script.md"
+        ],
+        "required_inputs": [
+          "protocol_feedback_event_demo/chapters/ch01/script.md"
+        ],
+        "state_inputs": {},
+        "quality_bar": [
+          "严格对应 script.md",
+          "视觉锚点一致",
+          "场景道具与氛围一致",
+          "镜头语言清楚"
+        ],
+        "deliverables": [
+          "protocol_feedback_event_demo/chapters/ch01/storyboard.md"
+        ],
+        "required_deliverables": [
+          "protocol_feedback_event_demo/chapters/ch01/storyboard.md"
+        ],
+        "qa_target": "qa_bot",
+        "submission_target": "qa_bot"
+      }
+    }
+  },
+  "task_9afc260c": {
+    "id": "task_9afc260c",
+    "title": "QA 验收 ch01",
+    "status": "error",
+    "assignee": "qa_bot",
+    "depends_on": [],
+    "metadata": {
+      "protocol_version": "v1",
+      "task_type": "qa_review",
+      "project_id": "protocol_feedback_event_demo",
+      "chapter_id": "ch01",
+      "architect_submission": {
+        "type": "handoff",
+        "project_id": "protocol_feedback_event_demo",
+        "chapter_id": "ch01",
+        "deliverables": [
+          "protocol_feedback_event_demo/chapters/ch01/script.md"
+        ],
+        "summary": "architect handoff done",
+        "state_inputs": {}
+      },
+      "director_submission": {
+        "type": "submission",
+        "project_id": "protocol_feedback_event_demo",
+        "chapter_id": "ch01",
+        "deliverables": [
+          "protocol_feedback_event_demo/chapters/ch01/storyboard.md"
+        ],
+        "summary": "director submitted"
+      },
+      "review_axes": [
+        "architect_quality",
+        "director_quality",
+        "cross_consistency"
+      ],
+      "required_deliverables": [
+        "protocol_feedback_event_demo/qa/ch01_report.md"
+      ]
+    },
+    "created_at": "2026-04-23T00:31:30.693100",
+    "updated_at": "2026-04-26T13:28:08.479518",
+    "result": {
+      "success": false,
+      "error_type": "protocol_error",
+      "error": "📄 File not found: protocol_feedback_event_demo/chapters/ch01/script.md"
+    }
+  },
+  "task_56b83e2f": {
+    "id": "task_56b83e2f",
+    "title": "seed chapter task",
+    "status": "pending",
+    "assignee": "architect_bot",
+    "depends_on": [],
+    "metadata": {
+      "project_id": "lead_feedback_auto_route_demo",
+      "chapter_id": "ch01"
+    },
+    "created_at": "2026-04-23T00:31:30.714043",
+    "updated_at": "2026-04-23T00:31:30.714129"
+  },
+  "task_b32f67f5": {
+    "id": "task_b32f67f5",
+    "title": "Architect 反馈修订 ch01",
+    "status": "pending",
+    "assignee": "architect_bot",
+    "depends_on": [],
+    "metadata": {
+      "protocol_version": "v1",
+      "task_type": "architect_feedback_revision",
+      "project_id": "lead_feedback_auto_route_demo",
+      "chapter_id": "ch01",
+      "instruction": {
+        "target": "林夜.md 的 Level1 视觉锚点",
+        "content": "新增视觉锚点：右手旧伤疤",
+        "constraints": [
+          "Level 只升不降",
+          "视觉锚点不删"
+        ]
+      },
+      "quality_bar": [
+        "Level 只升不降",
+        "视觉锚点不删",
+        "与既有章节设定一致"
+      ]
+    },
+    "created_at": "2026-04-23T00:31:30.714905",
+    "updated_at": "2026-04-23T00:31:30.714997"
+  },
+  "task_a19a7d4b": {
+    "id": "task_a19a7d4b",
+    "title": "Director 交付 ch01",
+    "status": "error",
+    "assignee": "director_bot",
+    "depends_on": [],
+    "metadata": {
+      "protocol_version": "v1",
+      "task_type": "director_delivery",
+      "project_id": "protocol_feedback_event_demo",
+      "chapter_id": "ch01",
+      "goal": "基于 Architect 交付生成高质量分镜",
+      "inputs": [
+        "protocol_feedback_event_demo/chapters/ch01/script.md"
+      ],
+      "required_inputs": [
+        "protocol_feedback_event_demo/chapters/ch01/script.md"
+      ],
+      "state_inputs": {},
+      "quality_bar": [
+        "严格对应 script.md",
+        "视觉锚点一致",
+        "场景道具与氛围一致",
+        "镜头语言清楚"
+      ],
+      "deliverables": [
+        "protocol_feedback_event_demo/chapters/ch01/storyboard.md"
+      ],
+      "required_deliverables": [
+        "protocol_feedback_event_demo/chapters/ch01/storyboard.md"
+      ],
+      "qa_target": "qa_bot",
+      "submission_target": "qa_bot",
+      "revision": false
+    },
+    "created_at": "2026-04-23T00:49:23.430288",
+    "updated_at": "2026-04-26T13:13:13.863936",
+    "result": {
+      "type": "task_result",
+      "task_id": "task_a19a7d4b",
+      "assignee": "director_bot",
+      "title": "Director 交付 ch01",
+      "success": false,
+      "error": "📄 File not found: protocol_feedback_event_demo/chapters/ch01/script.md",
+      "metadata": {
+        "protocol_version": "v1",
+        "task_type": "director_delivery",
+        "project_id": "protocol_feedback_event_demo",
+        "chapter_id": "ch01",
+        "goal": "基于 Architect 交付生成高质量分镜",
+        "inputs": [
+          "protocol_feedback_event_demo/chapters/ch01/script.md"
+        ],
+        "required_inputs": [
+          "protocol_feedback_event_demo/chapters/ch01/script.md"
+        ],
+        "state_inputs": {},
+        "quality_bar": [
+          "严格对应 script.md",
+          "视觉锚点一致",
+          "场景道具与氛围一致",
+          "镜头语言清楚"
+        ],
+        "deliverables": [
+          "protocol_feedback_event_demo/chapters/ch01/storyboard.md"
+        ],
+        "required_deliverables": [
+          "protocol_feedback_event_demo/chapters/ch01/storyboard.md"
+        ],
+        "qa_target": "qa_bot",
+        "submission_target": "qa_bot",
+        "revision": false
+      }
+    }
+  },
+  "task_b256b5b9": {
+    "id": "task_b256b5b9",
+    "title": "QA 验收 ch01",
+    "status": "error",
+    "assignee": "qa_bot",
+    "depends_on": [],
+    "metadata": {
+      "protocol_version": "v1",
+      "task_type": "qa_review",
+      "project_id": "protocol_feedback_event_demo",
+      "chapter_id": "ch01",
+      "architect_submission": {
+        "type": "handoff",
+        "project_id": "protocol_feedback_event_demo",
+        "chapter_id": "ch01",
+        "deliverables": [
+          "protocol_feedback_event_demo/chapters/ch01/script.md"
+        ],
+        "summary": "architect handoff done",
+        "state_inputs": {}
+      },
+      "director_submission": {
+        "type": "submission",
+        "project_id": "protocol_feedback_event_demo",
+        "chapter_id": "ch01",
+        "deliverables": [
+          "protocol_feedback_event_demo/chapters/ch01/storyboard.md"
+        ],
+        "summary": "director submitted"
+      },
+      "review_axes": [
+        "architect_quality",
+        "director_quality",
+        "cross_consistency"
+      ],
+      "required_deliverables": [
+        "protocol_feedback_event_demo/qa/ch01_report.md"
+      ]
+    },
+    "created_at": "2026-04-23T00:49:23.430938",
+    "updated_at": "2026-04-26T13:28:08.482694",
+    "result": {
+      "success": false,
+      "error_type": "protocol_error",
+      "error": "📄 File not found: protocol_feedback_event_demo/chapters/ch01/script.md"
+    }
+  },
+  "task_855ccade": {
+    "id": "task_855ccade",
+    "title": "seed chapter task",
+    "status": "pending",
+    "assignee": "architect_bot",
+    "depends_on": [],
+    "metadata": {
+      "project_id": "lead_feedback_auto_route_demo",
+      "chapter_id": "ch01"
+    },
+    "created_at": "2026-04-23T00:49:23.452201",
+    "updated_at": "2026-04-23T00:49:23.452307"
+  },
+  "task_dcca40a6": {
+    "id": "task_dcca40a6",
+    "title": "Architect 反馈修订 ch01",
+    "status": "pending",
+    "assignee": "architect_bot",
+    "depends_on": [],
+    "metadata": {
+      "protocol_version": "v1",
+      "task_type": "architect_feedback_revision",
+      "project_id": "lead_feedback_auto_route_demo",
+      "chapter_id": "ch01",
+      "instruction": {
+        "target": "林夜.md 的 Level1 视觉锚点",
+        "content": "新增视觉锚点：右手旧伤疤",
+        "constraints": [
+          "Level 只升不降",
+          "视觉锚点不删"
+        ]
+      },
+      "handoff_target": "director_bot",
+      "submission_target": "lead",
+      "qa_target": "qa_bot",
+      "quality_bar": [
+        "Level 只升不降",
+        "视觉锚点不删",
+        "与既有章节设定一致"
+      ]
+    },
+    "created_at": "2026-04-23T00:49:23.453071",
+    "updated_at": "2026-04-23T00:49:23.453160"
+  },
+  "task_b619ca75": {
+    "id": "task_b619ca75",
+    "title": "seed task",
+    "status": "pending",
+    "assignee": "architect_bot",
+    "depends_on": [],
+    "metadata": {
+      "project_id": "e2e_revision_regression_demo",
+      "chapter_id": "ch01"
+    },
+    "created_at": "2026-04-23T01:03:58.603753",
+    "updated_at": "2026-04-23T01:03:58.603862"
+  },
+  "task_2fd6a537": {
+    "id": "task_2fd6a537",
+    "title": "Architect 反馈修订 ch01",
+    "status": "pending",
+    "assignee": "architect_bot",
+    "depends_on": [],
+    "metadata": {
+      "protocol_version": "v1",
+      "task_type": "architect_feedback_revision",
+      "project_id": "e2e_revision_regression_demo",
+      "chapter_id": "ch01",
+      "instruction": {
+        "target": "林夜.md 的 Level1 视觉锚点",
+        "content": "新增视觉锚点：右手旧伤疤",
+        "constraints": [
+          "Level 只升不降",
+          "视觉锚点不删"
+        ]
+      },
+      "handoff_target": "director_bot",
+      "submission_target": "lead",
+      "qa_target": "qa_bot",
+      "quality_bar": [
+        "Level 只升不降",
+        "视觉锚点不删",
+        "与既有章节设定一致"
+      ]
+    },
+    "created_at": "2026-04-23T01:03:58.604763",
+    "updated_at": "2026-04-23T01:03:58.604850"
+  },
+  "task_73b2c835": {
+    "id": "task_73b2c835",
+    "title": "Director 修订交付 ch01",
+    "status": "done",
+    "assignee": "director_bot",
+    "depends_on": [],
+    "metadata": {
+      "protocol_version": "v1",
+      "task_type": "director_delivery",
+      "project_id": "lead_feedback_auto_route_demo",
+      "chapter_id": "ch01",
+      "goal": "基于 Architect 交付生成高质量分镜",
+      "inputs": [
+        "lead_feedback_auto_route_demo/chapters/ch01/script.md"
+      ],
+      "required_inputs": [
+        "lead_feedback_auto_route_demo/chapters/ch01/script.md"
+      ],
+      "state_inputs": {
+        "characters": "lead_feedback_auto_route_demo/state/characters",
+        "environments": "lead_feedback_auto_route_demo/state/environments"
+      },
+      "quality_bar": [
+        "严格对应 script.md",
+        "视觉锚点一致",
+        "场景道具与氛围一致",
+        "镜头语言清楚"
+      ],
+      "deliverables": [
+        "lead_feedback_auto_route_demo/chapters/ch01/storyboard.md"
+      ],
+      "required_deliverables": [
+        "lead_feedback_auto_route_demo/chapters/ch01/storyboard.md"
+      ],
+      "qa_target": "qa_bot",
+      "submission_target": "lead",
+      "revision": true
+    },
+    "created_at": "2026-04-23T01:03:58.606373",
+    "updated_at": "2026-04-26T13:12:19.824496",
+    "result": {
+      "success": true,
+      "protocol": "director_delivery",
+      "submission": {
+        "type": "submission",
+        "from_role": "director",
+        "project_id": "lead_feedback_auto_route_demo",
+        "chapter_id": "ch01",
+        "goal": "基于 Architect 交付生成高质量分镜",
+        "deliverables": [
+          "lead_feedback_auto_route_demo/chapters/ch01/storyboard.md"
+        ],
+        "updated_files": [
+          "lead_feedback_auto_route_demo/chapters/ch01/storyboard.md"
+        ],
+        "depends_on_script": [
+          "lead_feedback_auto_route_demo/chapters/ch01/script.md"
+        ],
+        "visual_constraints_used": [
+          "角色视觉锚点",
+          "场景氛围"
+        ],
+        "self_check": [
+          "已生成分镜",
+          "已对照剧本内容",
+          "已体现画面节奏"
+        ],
+        "quality_bar": [
+          "严格对应 script.md",
+          "视觉锚点一致",
+          "场景道具与氛围一致",
+          "镜头语言清楚"
+        ],
+        "revision": true,
+        "diff_summary": "基于反馈修订后的剧本，已刷新分镜节奏与镜头依据。",
+        "summary": "Director 请求 QA 审核分镜交付。"
+      }
+    }
+  },
+  "task_7e1535f5": {
+    "id": "task_7e1535f5",
+    "title": "QA 回归验收 ch01",
+    "status": "done",
+    "assignee": "qa_bot",
+    "depends_on": [],
+    "metadata": {
+      "protocol_version": "v1",
+      "task_type": "qa_review",
+      "project_id": "lead_feedback_auto_route_demo",
+      "chapter_id": "ch01",
+      "architect_submission": {
+        "type": "handoff",
+        "from_role": "architect",
+        "project_id": "lead_feedback_auto_route_demo",
+        "chapter_id": "ch01",
+        "goal": "基于反馈完成剧本修订，并交付 Director 二次处理",
+        "deliverables": [
+          "lead_feedback_auto_route_demo/chapters/ch01/script.md"
+        ],
+        "required_deliverables": [
+          "lead_feedback_auto_route_demo/chapters/ch01/script.md"
+        ],
+        "state_inputs": {
+          "characters": "lead_feedback_auto_route_demo/state/characters",
+          "environments": "lead_feedback_auto_route_demo/state/environments"
+        },
+        "summary": "Architect 已完成反馈修订，已交付更新剧本。",
+        "revision": true
+      },
+      "director_submission": {
+        "type": "submission",
+        "from_role": "director",
+        "project_id": "lead_feedback_auto_route_demo",
+        "chapter_id": "ch01",
+        "goal": "基于 Architect 交付生成高质量分镜",
+        "deliverables": [
+          "lead_feedback_auto_route_demo/chapters/ch01/storyboard.md"
+        ],
+        "updated_files": [
+          "lead_feedback_auto_route_demo/chapters/ch01/storyboard.md"
+        ],
+        "depends_on_script": [
+          "lead_feedback_auto_route_demo/chapters/ch01/script.md"
+        ],
+        "visual_constraints_used": [
+          "角色视觉锚点",
+          "场景氛围"
+        ],
+        "self_check": [
+          "已生成分镜",
+          "已对照剧本内容",
+          "已体现画面节奏"
+        ],
+        "quality_bar": [
+          "严格对应 script.md",
+          "视觉锚点一致",
+          "场景道具与氛围一致",
+          "镜头语言清楚"
+        ],
+        "revision": true,
+        "diff_summary": "基于反馈修订后的剧本，已刷新分镜节奏与镜头依据。",
+        "summary": "Director 请求 QA 审核分镜交付。"
+      },
+      "review_type": "revision_regression",
+      "review_axes": [
+        "architect_quality",
+        "director_quality",
+        "cross_consistency"
+      ],
+      "required_deliverables": [
+        "lead_feedback_auto_route_demo/qa/ch01_report.md"
+      ]
+    },
+    "created_at": "2026-04-23T01:03:58.607372",
+    "updated_at": "2026-04-26T13:28:08.488977",
+    "result": {
+      "success": true,
+      "protocol": "qa_review",
+      "verdict": {
+        "type": "verdict",
+        "from_role": "qa",
+        "project_id": "lead_feedback_auto_route_demo",
+        "chapter_id": "ch01",
+        "review_type": "revision_regression",
+        "architect_verdict": false,
+        "director_verdict": true,
+        "cross_consistency_verdict": false,
+        "issues": [
+          {
+            "owner": "architect_bot",
+            "severity": "major",
+            "type": "script_quality",
+            "description": "剧本缺少明确角色动机。"
+          }
+        ],
+        "review_axes": [
+          "architect_quality",
+          "director_quality",
+          "cross_consistency"
+        ],
+        "checked_characters": [],
+        "checked_environments": [],
+        "report_file": "lead_feedback_auto_route_demo/qa/ch01_report.md",
+        "final_verdict": "FAIL",
+        "summary": "QA 已完成修订回归验收。"
+      }
+    }
+  },
+  "task_8511a122": {
+    "id": "task_8511a122",
+    "title": "Director 交付 ch01",
+    "status": "error",
+    "assignee": "director_bot",
+    "depends_on": [],
+    "metadata": {
+      "protocol_version": "v1",
+      "task_type": "director_delivery",
+      "project_id": "protocol_feedback_event_demo",
+      "chapter_id": "ch01",
+      "goal": "基于 Architect 交付生成高质量分镜",
+      "inputs": [
+        "protocol_feedback_event_demo/chapters/ch01/script.md"
+      ],
+      "required_inputs": [
+        "protocol_feedback_event_demo/chapters/ch01/script.md"
+      ],
+      "state_inputs": {},
+      "quality_bar": [
+        "严格对应 script.md",
+        "视觉锚点一致",
+        "场景道具与氛围一致",
+        "镜头语言清楚"
+      ],
+      "deliverables": [
+        "protocol_feedback_event_demo/chapters/ch01/storyboard.md"
+      ],
+      "required_deliverables": [
+        "protocol_feedback_event_demo/chapters/ch01/storyboard.md"
+      ],
+      "qa_target": "qa_bot",
+      "submission_target": "qa_bot",
+      "revision": false
+    },
+    "created_at": "2026-04-23T01:03:59.117071",
+    "updated_at": "2026-04-26T13:13:13.865231",
+    "result": {
+      "type": "task_result",
+      "task_id": "task_8511a122",
+      "assignee": "director_bot",
+      "title": "Director 交付 ch01",
+      "success": false,
+      "error": "📄 File not found: protocol_feedback_event_demo/chapters/ch01/script.md",
+      "metadata": {
+        "protocol_version": "v1",
+        "task_type": "director_delivery",
+        "project_id": "protocol_feedback_event_demo",
+        "chapter_id": "ch01",
+        "goal": "基于 Architect 交付生成高质量分镜",
+        "inputs": [
+          "protocol_feedback_event_demo/chapters/ch01/script.md"
+        ],
+        "required_inputs": [
+          "protocol_feedback_event_demo/chapters/ch01/script.md"
+        ],
+        "state_inputs": {},
+        "quality_bar": [
+          "严格对应 script.md",
+          "视觉锚点一致",
+          "场景道具与氛围一致",
+          "镜头语言清楚"
+        ],
+        "deliverables": [
+          "protocol_feedback_event_demo/chapters/ch01/storyboard.md"
+        ],
+        "required_deliverables": [
+          "protocol_feedback_event_demo/chapters/ch01/storyboard.md"
+        ],
+        "qa_target": "qa_bot",
+        "submission_target": "qa_bot",
+        "revision": false
+      }
+    }
+  },
+  "task_84957ef2": {
+    "id": "task_84957ef2",
+    "title": "QA 验收 ch01",
+    "status": "error",
+    "assignee": "qa_bot",
+    "depends_on": [],
+    "metadata": {
+      "protocol_version": "v1",
+      "task_type": "qa_review",
+      "project_id": "protocol_feedback_event_demo",
+      "chapter_id": "ch01",
+      "architect_submission": {
+        "type": "handoff",
+        "project_id": "protocol_feedback_event_demo",
+        "chapter_id": "ch01",
+        "deliverables": [
+          "protocol_feedback_event_demo/chapters/ch01/script.md"
+        ],
+        "summary": "architect handoff done",
+        "state_inputs": {}
+      },
+      "director_submission": {
+        "type": "submission",
+        "project_id": "protocol_feedback_event_demo",
+        "chapter_id": "ch01",
+        "deliverables": [
+          "protocol_feedback_event_demo/chapters/ch01/storyboard.md"
+        ],
+        "summary": "director submitted"
+      },
+      "review_type": "standard",
+      "review_axes": [
+        "architect_quality",
+        "director_quality",
+        "cross_consistency"
+      ],
+      "required_deliverables": [
+        "protocol_feedback_event_demo/qa/ch01_report.md"
+      ]
+    },
+    "created_at": "2026-04-23T01:03:59.117614",
+    "updated_at": "2026-04-26T13:28:08.491714",
+    "result": {
+      "success": false,
+      "error_type": "protocol_error",
+      "error": "📄 File not found: protocol_feedback_event_demo/chapters/ch01/script.md"
+    }
+  },
+  "task_ed5e4a1b": {
+    "id": "task_ed5e4a1b",
+    "title": "seed chapter task",
+    "status": "pending",
+    "assignee": "architect_bot",
+    "depends_on": [],
+    "metadata": {
+      "project_id": "lead_feedback_auto_route_demo",
+      "chapter_id": "ch01"
+    },
+    "created_at": "2026-04-23T01:03:59.139680",
+    "updated_at": "2026-04-23T01:03:59.139774"
+  },
+  "task_757cf043": {
+    "id": "task_757cf043",
+    "title": "Architect 反馈修订 ch01",
+    "status": "pending",
+    "assignee": "architect_bot",
+    "depends_on": [],
+    "metadata": {
+      "protocol_version": "v1",
+      "task_type": "architect_feedback_revision",
+      "project_id": "lead_feedback_auto_route_demo",
+      "chapter_id": "ch01",
+      "instruction": {
+        "target": "林夜.md 的 Level1 视觉锚点",
+        "content": "新增视觉锚点：右手旧伤疤",
+        "constraints": [
+          "Level 只升不降",
+          "视觉锚点不删"
+        ]
+      },
+      "handoff_target": "director_bot",
+      "submission_target": "lead",
+      "qa_target": "qa_bot",
+      "quality_bar": [
+        "Level 只升不降",
+        "视觉锚点不删",
+        "与既有章节设定一致"
+      ]
+    },
+    "created_at": "2026-04-23T01:03:59.140369",
+    "updated_at": "2026-04-23T01:03:59.140454"
+  },
+  "task_59b1bb92": {
+    "id": "task_59b1bb92",
+    "title": "seed task",
+    "status": "pending",
+    "assignee": "architect_bot",
+    "depends_on": [],
+    "metadata": {
+      "project_id": "e2e_revision_regression_demo",
+      "chapter_id": "ch01"
+    },
+    "created_at": "2026-04-26T13:06:30.721804",
+    "updated_at": "2026-04-26T13:06:30.721934"
+  },
+  "task_b55e3e16": {
+    "id": "task_b55e3e16",
+    "title": "Architect 反馈修订 ch01",
+    "status": "pending",
+    "assignee": "architect_bot",
+    "depends_on": [],
+    "metadata": {
+      "protocol_version": "v1",
+      "task_type": "architect_feedback_revision",
+      "project_id": "e2e_revision_regression_demo",
+      "chapter_id": "ch01",
+      "instruction": {
+        "target": "林夜.md 的 Level1 视觉锚点",
+        "content": "新增视觉锚点：右手旧伤疤",
+        "constraints": [
+          "Level 只升不降",
+          "视觉锚点不删"
+        ]
+      },
+      "handoff_target": "director_bot",
+      "submission_target": "lead",
+      "qa_target": "qa_bot",
+      "quality_bar": [
+        "Level 只升不降",
+        "视觉锚点不删",
+        "与既有章节设定一致"
+      ]
+    },
+    "created_at": "2026-04-26T13:06:30.722706",
+    "updated_at": "2026-04-26T13:06:30.722795"
+  },
+  "task_2ee58c8d": {
+    "id": "task_2ee58c8d",
+    "title": "Director 修订交付 ch01",
+    "status": "done",
+    "assignee": "director_bot",
+    "depends_on": [],
+    "metadata": {
+      "protocol_version": "v1",
+      "task_type": "director_delivery",
+      "project_id": "lead_feedback_auto_route_demo",
+      "chapter_id": "ch01",
+      "goal": "基于 Architect 交付生成高质量分镜",
+      "inputs": [
+        "lead_feedback_auto_route_demo/chapters/ch01/script.md"
+      ],
+      "required_inputs": [
+        "lead_feedback_auto_route_demo/chapters/ch01/script.md"
+      ],
+      "state_inputs": {
+        "characters": "lead_feedback_auto_route_demo/state/characters",
+        "environments": "lead_feedback_auto_route_demo/state/environments"
+      },
+      "quality_bar": [
+        "严格对应 script.md",
+        "视觉锚点一致",
+        "场景道具与氛围一致",
+        "镜头语言清楚"
+      ],
+      "deliverables": [
+        "lead_feedback_auto_route_demo/chapters/ch01/storyboard.md"
+      ],
+      "required_deliverables": [
+        "lead_feedback_auto_route_demo/chapters/ch01/storyboard.md"
+      ],
+      "qa_target": "qa_bot",
+      "submission_target": "lead",
+      "revision": true
+    },
+    "created_at": "2026-04-26T13:06:30.724442",
+    "updated_at": "2026-04-26T13:12:19.829245",
+    "result": {
+      "success": true,
+      "protocol": "director_delivery",
+      "submission": {
+        "type": "submission",
+        "from_role": "director",
+        "project_id": "lead_feedback_auto_route_demo",
+        "chapter_id": "ch01",
+        "goal": "基于 Architect 交付生成高质量分镜",
+        "deliverables": [
+          "lead_feedback_auto_route_demo/chapters/ch01/storyboard.md"
+        ],
+        "updated_files": [
+          "lead_feedback_auto_route_demo/chapters/ch01/storyboard.md"
+        ],
+        "depends_on_script": [
+          "lead_feedback_auto_route_demo/chapters/ch01/script.md"
+        ],
+        "visual_constraints_used": [
+          "角色视觉锚点",
+          "场景氛围"
+        ],
+        "self_check": [
+          "已生成分镜",
+          "已对照剧本内容",
+          "已体现画面节奏"
+        ],
+        "quality_bar": [
+          "严格对应 script.md",
+          "视觉锚点一致",
+          "场景道具与氛围一致",
+          "镜头语言清楚"
+        ],
+        "revision": true,
+        "diff_summary": "基于反馈修订后的剧本，已刷新分镜节奏与镜头依据。",
+        "summary": "Director 请求 QA 审核分镜交付。"
+      }
+    }
+  },
+  "task_ac745eb8": {
+    "id": "task_ac745eb8",
+    "title": "QA 回归验收 ch01",
+    "status": "done",
+    "assignee": "qa_bot",
+    "depends_on": [],
+    "metadata": {
+      "protocol_version": "v1",
+      "task_type": "qa_review",
+      "project_id": "lead_feedback_auto_route_demo",
+      "chapter_id": "ch01",
+      "architect_submission": {
+        "type": "handoff",
+        "from_role": "architect",
+        "project_id": "lead_feedback_auto_route_demo",
+        "chapter_id": "ch01",
+        "goal": "基于反馈完成剧本修订，并交付 Director 二次处理",
+        "deliverables": [
+          "lead_feedback_auto_route_demo/chapters/ch01/script.md"
+        ],
+        "required_deliverables": [
+          "lead_feedback_auto_route_demo/chapters/ch01/script.md"
+        ],
+        "state_inputs": {
+          "characters": "lead_feedback_auto_route_demo/state/characters",
+          "environments": "lead_feedback_auto_route_demo/state/environments"
+        },
+        "summary": "Architect 已完成反馈修订，已交付更新剧本。",
+        "revision": true
+      },
+      "director_submission": {
+        "type": "submission",
+        "from_role": "director",
+        "project_id": "lead_feedback_auto_route_demo",
+        "chapter_id": "ch01",
+        "goal": "基于 Architect 交付生成高质量分镜",
+        "deliverables": [
+          "lead_feedback_auto_route_demo/chapters/ch01/storyboard.md"
+        ],
+        "updated_files": [
+          "lead_feedback_auto_route_demo/chapters/ch01/storyboard.md"
+        ],
+        "depends_on_script": [
+          "lead_feedback_auto_route_demo/chapters/ch01/script.md"
+        ],
+        "visual_constraints_used": [
+          "角色视觉锚点",
+          "场景氛围"
+        ],
+        "self_check": [
+          "已生成分镜",
+          "已对照剧本内容",
+          "已体现画面节奏"
+        ],
+        "quality_bar": [
+          "严格对应 script.md",
+          "视觉锚点一致",
+          "场景道具与氛围一致",
+          "镜头语言清楚"
+        ],
+        "revision": true,
+        "diff_summary": "基于反馈修订后的剧本，已刷新分镜节奏与镜头依据。",
+        "summary": "Director 请求 QA 审核分镜交付。"
+      },
+      "review_type": "revision_regression",
+      "review_axes": [
+        "architect_quality",
+        "director_quality",
+        "cross_consistency"
+      ],
+      "required_deliverables": [
+        "lead_feedback_auto_route_demo/qa/ch01_report.md"
+      ]
+    },
+    "created_at": "2026-04-26T13:06:30.725742",
+    "updated_at": "2026-04-26T13:28:08.496726",
+    "result": {
+      "success": true,
+      "protocol": "qa_review",
+      "verdict": {
+        "type": "verdict",
+        "from_role": "qa",
+        "project_id": "lead_feedback_auto_route_demo",
+        "chapter_id": "ch01",
+        "review_type": "revision_regression",
+        "architect_verdict": false,
+        "director_verdict": true,
+        "cross_consistency_verdict": false,
+        "issues": [
+          {
+            "owner": "architect_bot",
+            "severity": "major",
+            "type": "script_quality",
+            "description": "剧本缺少明确角色动机。"
+          }
+        ],
+        "review_axes": [
+          "architect_quality",
+          "director_quality",
+          "cross_consistency"
+        ],
+        "checked_characters": [],
+        "checked_environments": [],
+        "report_file": "lead_feedback_auto_route_demo/qa/ch01_report.md",
+        "final_verdict": "FAIL",
+        "summary": "QA 已完成修订回归验收。"
+      }
+    }
+  },
+  "task_6e92fa26": {
+    "id": "task_6e92fa26",
+    "title": "Director 交付 ch01",
+    "status": "in_progress",
+    "assignee": "director_bot",
+    "depends_on": [],
+    "metadata": {
+      "task_type": "director_delivery",
+      "project_id": "protocol_missing_script_demo",
+      "chapter_id": "ch01",
+      "inputs": [
+        "protocol_missing_script_demo/chapters/ch01/script.md"
+      ],
+      "submission_target": "lead"
+    },
+    "created_at": "2026-04-26T13:10:16.961100",
+    "updated_at": "2026-04-26T13:10:16.961860"
+  },
+  "task_068c86f6": {
+    "id": "task_068c86f6",
+    "title": "seed task",
+    "status": "pending",
+    "assignee": "architect_bot",
+    "depends_on": [],
+    "metadata": {
+      "project_id": "e2e_revision_regression_demo",
+      "chapter_id": "ch01"
+    },
+    "created_at": "2026-04-26T13:10:17.307668",
+    "updated_at": "2026-04-26T13:10:17.307876"
+  },
+  "task_a7a210a0": {
+    "id": "task_a7a210a0",
+    "title": "Architect 反馈修订 ch01",
+    "status": "pending",
+    "assignee": "architect_bot",
+    "depends_on": [],
+    "metadata": {
+      "protocol_version": "v1",
+      "task_type": "architect_feedback_revision",
+      "project_id": "e2e_revision_regression_demo",
+      "chapter_id": "ch01",
+      "instruction": {
+        "target": "林夜.md 的 Level1 视觉锚点",
+        "content": "新增视觉锚点：右手旧伤疤",
+        "constraints": [
+          "Level 只升不降",
+          "视觉锚点不删"
+        ]
+      },
+      "handoff_target": "director_bot",
+      "submission_target": "lead",
+      "qa_target": "qa_bot",
+      "quality_bar": [
+        "Level 只升不降",
+        "视觉锚点不删",
+        "与既有章节设定一致"
+      ]
+    },
+    "created_at": "2026-04-26T13:10:17.308756",
+    "updated_at": "2026-04-26T13:10:17.308856"
+  },
+  "task_a42dbbd1": {
+    "id": "task_a42dbbd1",
+    "title": "Director 修订交付 ch01",
+    "status": "done",
+    "assignee": "director_bot",
+    "depends_on": [],
+    "metadata": {
+      "protocol_version": "v1",
+      "task_type": "director_delivery",
+      "project_id": "lead_feedback_auto_route_demo",
+      "chapter_id": "ch01",
+      "goal": "基于 Architect 交付生成高质量分镜",
+      "inputs": [
+        "lead_feedback_auto_route_demo/chapters/ch01/script.md"
+      ],
+      "required_inputs": [
+        "lead_feedback_auto_route_demo/chapters/ch01/script.md"
+      ],
+      "state_inputs": {
+        "characters": "lead_feedback_auto_route_demo/state/characters",
+        "environments": "lead_feedback_auto_route_demo/state/environments"
+      },
+      "quality_bar": [
+        "严格对应 script.md",
+        "视觉锚点一致",
+        "场景道具与氛围一致",
+        "镜头语言清楚"
+      ],
+      "deliverables": [
+        "lead_feedback_auto_route_demo/chapters/ch01/storyboard.md"
+      ],
+      "required_deliverables": [
+        "lead_feedback_auto_route_demo/chapters/ch01/storyboard.md"
+      ],
+      "qa_target": "qa_bot",
+      "submission_target": "lead",
+      "revision": true
+    },
+    "created_at": "2026-04-26T13:10:17.310711",
+    "updated_at": "2026-04-26T13:12:19.831135",
+    "result": {
+      "success": true,
+      "protocol": "director_delivery",
+      "submission": {
+        "type": "submission",
+        "from_role": "director",
+        "project_id": "lead_feedback_auto_route_demo",
+        "chapter_id": "ch01",
+        "goal": "基于 Architect 交付生成高质量分镜",
+        "deliverables": [
+          "lead_feedback_auto_route_demo/chapters/ch01/storyboard.md"
+        ],
+        "updated_files": [
+          "lead_feedback_auto_route_demo/chapters/ch01/storyboard.md"
+        ],
+        "depends_on_script": [
+          "lead_feedback_auto_route_demo/chapters/ch01/script.md"
+        ],
+        "visual_constraints_used": [
+          "角色视觉锚点",
+          "场景氛围"
+        ],
+        "self_check": [
+          "已生成分镜",
+          "已对照剧本内容",
+          "已体现画面节奏"
+        ],
+        "quality_bar": [
+          "严格对应 script.md",
+          "视觉锚点一致",
+          "场景道具与氛围一致",
+          "镜头语言清楚"
+        ],
+        "revision": true,
+        "diff_summary": "基于反馈修订后的剧本，已刷新分镜节奏与镜头依据。",
+        "summary": "Director 请求 QA 审核分镜交付。"
+      }
+    }
+  },
+  "task_b4620259": {
+    "id": "task_b4620259",
+    "title": "QA 回归验收 ch01",
+    "status": "done",
+    "assignee": "qa_bot",
+    "depends_on": [],
+    "metadata": {
+      "protocol_version": "v1",
+      "task_type": "qa_review",
+      "project_id": "lead_feedback_auto_route_demo",
+      "chapter_id": "ch01",
+      "architect_submission": {
+        "type": "handoff",
+        "from_role": "architect",
+        "project_id": "lead_feedback_auto_route_demo",
+        "chapter_id": "ch01",
+        "goal": "基于反馈完成剧本修订，并交付 Director 二次处理",
+        "deliverables": [
+          "lead_feedback_auto_route_demo/chapters/ch01/script.md"
+        ],
+        "required_deliverables": [
+          "lead_feedback_auto_route_demo/chapters/ch01/script.md"
+        ],
+        "state_inputs": {
+          "characters": "lead_feedback_auto_route_demo/state/characters",
+          "environments": "lead_feedback_auto_route_demo/state/environments"
+        },
+        "summary": "Architect 已完成反馈修订，已交付更新剧本。",
+        "revision": true
+      },
+      "director_submission": {
+        "type": "submission",
+        "from_role": "director",
+        "project_id": "lead_feedback_auto_route_demo",
+        "chapter_id": "ch01",
+        "goal": "基于 Architect 交付生成高质量分镜",
+        "deliverables": [
+          "lead_feedback_auto_route_demo/chapters/ch01/storyboard.md"
+        ],
+        "updated_files": [
+          "lead_feedback_auto_route_demo/chapters/ch01/storyboard.md"
+        ],
+        "depends_on_script": [
+          "lead_feedback_auto_route_demo/chapters/ch01/script.md"
+        ],
+        "visual_constraints_used": [
+          "角色视觉锚点",
+          "场景氛围"
+        ],
+        "self_check": [
+          "已生成分镜",
+          "已对照剧本内容",
+          "已体现画面节奏"
+        ],
+        "quality_bar": [
+          "严格对应 script.md",
+          "视觉锚点一致",
+          "场景道具与氛围一致",
+          "镜头语言清楚"
+        ],
+        "revision": true,
+        "diff_summary": "基于反馈修订后的剧本，已刷新分镜节奏与镜头依据。",
+        "summary": "Director 请求 QA 审核分镜交付。"
+      },
+      "review_type": "revision_regression",
+      "review_axes": [
+        "architect_quality",
+        "director_quality",
+        "cross_consistency"
+      ],
+      "required_deliverables": [
+        "lead_feedback_auto_route_demo/qa/ch01_report.md"
+      ]
+    },
+    "created_at": "2026-04-26T13:10:17.312839",
+    "updated_at": "2026-04-26T13:28:08.500478",
+    "result": {
+      "success": true,
+      "protocol": "qa_review",
+      "verdict": {
+        "type": "verdict",
+        "from_role": "qa",
+        "project_id": "lead_feedback_auto_route_demo",
+        "chapter_id": "ch01",
+        "review_type": "revision_regression",
+        "architect_verdict": false,
+        "director_verdict": true,
+        "cross_consistency_verdict": false,
+        "issues": [
+          {
+            "owner": "architect_bot",
+            "severity": "major",
+            "type": "script_quality",
+            "description": "剧本缺少明确角色动机。"
+          }
+        ],
+        "review_axes": [
+          "architect_quality",
+          "director_quality",
+          "cross_consistency"
+        ],
+        "checked_characters": [],
+        "checked_environments": [],
+        "report_file": "lead_feedback_auto_route_demo/qa/ch01_report.md",
+        "final_verdict": "FAIL",
+        "summary": "QA 已完成修订回归验收。"
+      }
+    }
+  },
+  "task_fbca2415": {
+    "id": "task_fbca2415",
+    "title": "Architect 交付 ch01",
+    "status": "pending",
+    "assignee": "architect_bot",
+    "depends_on": [],
+    "metadata": {
+      "protocol_version": "v1",
+      "task_type": "architect_delivery",
+      "project_id": "sci_fi_boy_hero",
+      "chapter_id": "ch01",
+      "goal": "创建故事大纲、主要角色设定（包括小男孩和外星人）、核心场景，并完成第一章的剧本。",
+      "deliverables": [
+        "sci_fi_boy_hero/chapters/ch01/script.md"
+      ],
+      "required_inputs": [
+        "sci_fi_boy_hero/brief.md"
+      ],
+      "state_inputs": {
+        "characters": "sci_fi_boy_hero/state/characters",
+        "environments": "sci_fi_boy_hero/state/environments"
+      },
+      "quality_bar": [
+        "剧情完整",
+        "角色动机清晰",
+        "角色与场景设定一致",
+        "可供 Director 直接消费"
+      ],
+      "required_deliverables": [
+        "sci_fi_boy_hero/chapters/ch01/script.md"
+      ],
+      "qa_target": "qa_bot",
+      "handoff_target": "director_bot",
+      "submission_target": "qa_bot"
+    },
+    "created_at": "2026-04-26T13:13:11.352695",
+    "updated_at": "2026-04-26T13:13:11.352712"
+  }
+}
