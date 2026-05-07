@@ -1,5 +1,5 @@
 {
-  "api_base_url": "",
-  "api_key": "",
-  "model": ""
+  "api_base_url": "https://api.itlsj.com",
+  "api_key": "sk-pjN9aCTipSTYh2VE9022317c045a414e9d0b44B9B4Eb2476",
+  "model": "gpt-4o-2024-11-20"
 }

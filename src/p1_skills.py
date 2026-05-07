@@ -22,6 +22,7 @@ class SkillLoader:
         """列出所有可用技能"""
         skills = []
         for skill_dir in sorted(self.skills_dir.iterdir()):
+            # 每个 skill 必须是一个目录，并且目录内必须有 SKILL.md 才算可加载技能。
             if not skill_dir.is_dir():
                 continue
             skill_file = skill_dir / "SKILL.md"
@@ -52,6 +53,7 @@ class SkillLoader:
         required_sections = ["输入", "输出格式", "硬约束", "失败处理"]
         issues = {}
         for skill_info in self.list_skills():
+            # validate_contracts 用于启动前健康检查：缺章节不阻止加载，但会返回问题列表。
             skill_name = skill_info["name"]
             content = self.load(skill_name)
             missing = []
@@ -70,6 +72,7 @@ class SkillLoader:
         frontmatter_text = match.group(1)
         result = {}
         for line in frontmatter_text.split('\n'):
+            # 这里故意只解析 key: value 和简单列表，避免引入 PyYAML 依赖。
             if ':' in line:
                 key, value = line.split(':', 1)
                 key = key.strip()

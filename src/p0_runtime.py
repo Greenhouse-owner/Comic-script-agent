@@ -12,7 +12,7 @@ import subprocess
 import threading
 from pathlib import Path
 from datetime import datetime
-from typing import List, Dict, Optional, Literal
+from typing import List, Dict, Optional, Literal, Any
 from queue import Queue
 
 
@@ -94,6 +94,51 @@ def run_edit(file_path: str, old_text: str, new_text: str) -> dict:
 
 
 # ============================================================
+# 事件日志系统
+# ============================================================
+
+class EventLogger:
+    """统一事件日志器：同一份事件既打印到终端，也持久化到 JSONL，方便卡住时回看最后一步。"""
+
+    def __init__(self, event_file: str = "events.jsonl", also_print: bool = True):
+        self.event_path = safe_path(event_file)
+        self.event_path.parent.mkdir(parents=True, exist_ok=True)
+        self.also_print = also_print
+        self._lock = threading.Lock()
+
+    def emit(self, agent: str, stage: str, message: str, metadata: Optional[Dict[str, Any]] = None) -> dict:
+        """记录一个进度事件；metadata 放变量快照，用于定位最后卡住的参数状态。"""
+        event = {
+            "timestamp": time.time(),
+            "time": datetime.now().isoformat(),
+            "agent": agent,
+            "stage": stage,
+            "message": message,
+            "metadata": metadata or {},
+        }
+        line = json.dumps(event, ensure_ascii=False)
+        with self._lock:
+            with self.event_path.open("a", encoding="utf-8") as f:
+                f.write(line + "\n")
+        if self.also_print:
+            print(f"[{agent}][{stage}] {message}", flush=True)
+        return event
+
+    def recent(self, limit: int = 10) -> List[dict]:
+        """读取最近 N 条事件，供 /status 展示，不改变事件文件内容。"""
+        if not self.event_path.exists():
+            return []
+        lines = [line for line in self.event_path.read_text(encoding="utf-8").splitlines() if line.strip()]
+        events = []
+        for line in lines[-limit:]:
+            try:
+                events.append(json.loads(line))
+            except Exception:
+                continue
+        return events
+
+
+# ============================================================
 # 任务管理系统
 # ============================================================
 
@@ -120,6 +165,8 @@ class TaskManager:
         task_id = f"task_{uuid.uuid4().hex[:8]}"
         status = "pending"
         if depends_on:
+            # 任务创建时只做一次依赖快照：只要有依赖未完成，先进入 blocked。
+            # 后续依赖完成时由 _unblock_dependents 自动把它重新放回 pending。
             for dep_id in depends_on:
                 if dep_id not in self.tasks:
                     raise ValueError(f"依赖任务不存在: {dep_id}")
@@ -151,6 +198,7 @@ class TaskManager:
         self._save()
 
     def _unblock_dependents(self, completed_task_id: str):
+        """当一个任务完成后，扫描所有依赖它的 blocked 任务；所有依赖都 done 才释放。"""
         for task_id, task in self.tasks.items():
             if completed_task_id in task["depends_on"]:
                 all_deps_done = all(
@@ -165,6 +213,7 @@ class TaskManager:
             task for task in self.tasks.values()
             if task["assignee"] == assignee and task["status"] != "done"
         ]
+        # 优先让正在执行和可执行任务排在前面，避免 /status 或队友轮询先看到 blocked/error。
         priority = {"in_progress": 0, "pending": 1, "blocked": 2, "error": 3}
         result.sort(key=lambda t: priority.get(t["status"], 99))
         return result
@@ -246,6 +295,7 @@ class MessageBus:
             for line in f:
                 if line.strip():
                     messages.append(json.loads(line))
+        # mark_read=True 会清空 inbox；Lead/队友都是通过这种方式完成“消费即删除”。
         if mark_read:
             inbox_file.write_text("")
         return messages
@@ -264,6 +314,7 @@ class BackgroundManager:
         self.running_tasks: Dict[str, threading.Thread] = {}
 
     def submit(self, task_id: str, func, *args, **kwargs):
+        # 线程包装器把成功/失败统一投递到 notification_queue，主循环再统一 drain。
         def wrapper():
             try:
                 result = func(*args, **kwargs)
@@ -301,6 +352,7 @@ def auto_compact(messages: List[dict], threshold: int = 50000) -> List[dict]:
     estimated_tokens = total_chars // 4
     if estimated_tokens < threshold:
         return messages
+    # 压缩时保留 system 和最近 10 条，避免模型上下文无限增长拖慢或超限。
     system_msgs = [msg for msg in messages if msg["role"] == "system"]
     recent_msgs = messages[-10:]
     compressed_summary = {

@@ -1,0 +1,39 @@
+{
+  "project_id": "story_20260506_134829",
+  "chapter_id": "ch01",
+  "script_path": "story_20260506_134829/chapters/ch01/script.md",
+  "initial_selected_files": {
+    "characters": [
+      "story_20260506_134829/state/characters/米娅.md"
+    ],
+    "environments": [
+      "story_20260506_134829/state/environments/灯塔.md",
+      "story_20260506_134829/state/environments/沙滩.md"
+    ]
+  },
+  "additional_selected_files": {
+    "characters": [],
+    "environments": []
+  },
+  "final_selected_files": {
+    "characters": [
+      "story_20260506_134829/state/characters/米娅.md"
+    ],
+    "environments": [
+      "story_20260506_134829/state/environments/灯塔.md",
+      "story_20260506_134829/state/environments/沙滩.md"
+    ]
+  },
+  "missing_context_notes": [],
+  "warnings": [],
+  "selection_rounds": [
+    {
+      "round": 1,
+      "reason": "根据剧本中明确提到的角色米娅及主要环境灯塔和沙滩选择文件。"
+    }
+  ],
+  "skills_used": [
+    "director-context-planner"
+  ],
+  "planner_mode": "model_first"
+}

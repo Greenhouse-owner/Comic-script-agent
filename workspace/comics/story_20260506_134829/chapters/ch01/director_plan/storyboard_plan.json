@@ -1,0 +1,229 @@
+{
+  "chapter_id": "ch01",
+  "recommended_page_count": 12,
+  "total_panel_count": 48,
+  "beats": [
+    {
+      "beat_id": "b01",
+      "summary": "米娅在灯塔内孤独地阅读幻想故事书，表现她的内心孤独与好奇。",
+      "source_script_range": "场景 1",
+      "story_function": "setup",
+      "emotional_tension": 2,
+      "visual_importance": 2,
+      "must_show": [
+        "灯塔内的环境",
+        "米娅的书与专注神情"
+      ]
+    },
+    {
+      "beat_id": "b02",
+      "summary": "米娅在灯塔外的海边栏杆发现神秘光点，开始情绪上的转变。",
+      "source_script_range": "场景 2",
+      "story_function": "reveal",
+      "emotional_tension": 4,
+      "visual_importance": 3,
+      "must_show": [
+        "海面的光点",
+        "米娅的兴奋与探索动作"
+      ]
+    },
+    {
+      "beat_id": "b03",
+      "summary": "星鱼主动引导米娅，形成一条光路，引发她的好奇与冒险决心。",
+      "source_script_range": "场景 3",
+      "story_function": "conflict",
+      "emotional_tension": 5,
+      "visual_importance": 3,
+      "must_show": [
+        "光路的生成过程",
+        "米娅伸手触碰光芒"
+      ]
+    },
+    {
+      "beat_id": "b04",
+      "summary": "米娅走入灯塔深处，发现神秘机械装置，暗示巨大的未知。",
+      "source_script_range": "场景 4",
+      "story_function": "climax",
+      "emotional_tension": 6,
+      "visual_importance": 4,
+      "must_show": [
+        "神秘机械装置",
+        "米娅震惊的表情"
+      ]
+    }
+  ],
+  "page_plan": [
+    {
+      "page": 1,
+      "beats": [
+        "b01"
+      ],
+      "page_function": "establishing",
+      "emotional_goal": "呈现米娅的孤独与对幻想的沉浸。",
+      "panel_count": 4,
+      "density": "medium",
+      "page_turn_hook": "米娅独自自语，展现孤独的疑问。"
+    },
+    {
+      "page": 2,
+      "beats": [
+        "b01",
+        "b02"
+      ],
+      "page_function": "transition",
+      "emotional_goal": "从孤独转向探索的兴奋。",
+      "panel_count": 5,
+      "density": "medium",
+      "page_turn_hook": "米娅发现海面光点，引发好奇。"
+    },
+    {
+      "page": 3,
+      "beats": [
+        "b02"
+      ],
+      "page_function": "reveal",
+      "emotional_goal": "展现神秘光点吸引米娅。",
+      "panel_count": 4,
+      "density": "medium",
+      "page_turn_hook": "光点逐渐靠近，营造悬念与期待。"
+    },
+    {
+      "page": 4,
+      "beats": [
+        "b03"
+      ],
+      "page_function": "action",
+      "emotional_goal": "展现星鱼引导光路的奇幻场景。",
+      "panel_count": 6,
+      "density": "high",
+      "page_turn_hook": "光路指向灯塔底层，暗示谜题出现。"
+    },
+    {
+      "page": 5,
+      "beats": [
+        "b04"
+      ],
+      "page_function": "climax",
+      "emotional_goal": "揭示灯塔深处的秘密，扩大谜团。",
+      "panel_count": 4,
+      "density": "medium",
+      "page_turn_hook": "米娅震惊地发现机械装置。"
+    }
+  ],
+  "layout_plan": [
+    {
+      "page": 1,
+      "panels": [
+        {
+          "panel_id": "p01_01",
+          "beat_id": "b01",
+          "size": "wide_large",
+          "relative_area": 0.4,
+          "shot_type": "远景",
+          "purpose": "展现灯塔的孤独环境。",
+          "reading_order": 1
+        },
+        {
+          "panel_id": "p01_02",
+          "beat_id": "b01",
+          "size": "medium",
+          "relative_area": 0.25,
+          "shot_type": "近景",
+          "purpose": "刻画米娅手捧书专注的神情。",
+          "reading_order": 2
+        },
+        {
+          "panel_id": "p01_03",
+          "beat_id": "b01",
+          "size": "reaction_closeup",
+          "relative_area": 0.15,
+          "shot_type": "特写",
+          "purpose": "表现米娅独自的自语。",
+          "reading_order": 3
+        },
+        {
+          "panel_id": "p01_04",
+          "beat_id": "b01",
+          "size": "medium",
+          "relative_area": 0.2,
+          "shot_type": "中景",
+          "purpose": "灯塔内的陈旧环境。",
+          "reading_order": 4
+        }
+      ]
+    },
+    {
+      "page": 2,
+      "panels": [
+        {
+          "panel_id": "p02_01",
+          "beat_id": "b01",
+          "size": "tall_narrow",
+          "relative_area": 0.3,
+          "shot_type": "中景",
+          "purpose": "米娅步出灯塔。",
+          "reading_order": 1
+        },
+        {
+          "panel_id": "p02_02",
+          "beat_id": "b02",
+          "size": "medium",
+          "relative_area": 0.2,
+          "shot_type": "中景",
+          "purpose": "米娅看到海面的光点。",
+          "reading_order": 2
+        },
+        {
+          "panel_id": "p02_03",
+          "beat_id": "b02",
+          "size": "reaction_closeup",
+          "relative_area": 0.15,
+          "shot_type": "特写",
+          "purpose": "米娅兴奋的表情。",
+          "reading_order": 3
+        },
+        {
+          "panel_id": "p02_04",
+          "beat_id": "b02",
+          "size": "wide_large",
+          "relative_area": 0.35,
+          "shot_type": "远景",
+          "purpose": "海面的神秘光点全景。",
+          "reading_order": 4
+        }
+      ]
+    }
+  ],
+  "tension_strategy": [
+    {
+      "target": "b01",
+      "tension_level": 2,
+      "pacing": "slow",
+      "layout_advice": "留白与散布视角强调孤独氛围。"
+    },
+    {
+      "target": "b02",
+      "tension_level": 4,
+      "pacing": "normal",
+      "layout_advice": "采用逐渐靠近的镜头感，增加悬念。"
+    },
+    {
+      "target": "b03",
+      "tension_level": 5,
+      "pacing": "accelerate_then_release",
+      "layout_advice": "小格子快节奏展现光路生成过程。"
+    },
+    {
+      "target": "b04",
+      "tension_level": 6,
+      "pacing": "slow",
+      "layout_advice": "独特的构图放置机械装置突出奇观效果。"
+    }
+  ],
+  "warnings": [],
+  "skills_used": [
+    "director-storyboard-planner",
+    "panel-director"
+  ],
+  "planner_mode": "model_first"
+}

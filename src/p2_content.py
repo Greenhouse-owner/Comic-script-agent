@@ -25,6 +25,7 @@ def comic_init_project(project_id: str, brief: str, num_chapters: int = 3) -> di
         project_path / "feedback"
     ]
     for chapter_num in range(1, num_chapters + 1):
+        # 章节目录按 ch01/ch02... 预创建，后续 Architect/Director 只负责写入具体交付文件。
         dirs_to_create.append(project_path / "chapters" / f"ch{chapter_num:02d}")
 
     created = []
@@ -117,12 +118,12 @@ def comic_qa_check_chapter(project_id: str, chapter_id: str, openai_client, mode
     except FileNotFoundError:
         storyboard_text = "[分镜文件不存在，跳过分镜检查]"
 
-    # 读取所有角色 .md 文件
+    # 将角色库所有 Markdown 拼接进 QA prompt；每个文件之间用分隔线避免模型混淆角色边界。
     characters_content = ""
     for name in comic_list_characters(project_id):
         characters_content += comic_read_character(project_id, name) + "\n\n---\n\n"
 
-    # 读取所有场景 .md 文件
+    # 场景库同样整体拼入 QA prompt，便于检查分镜/剧本是否引用了有效场景信息。
     environments_content = ""
     for name in comic_list_environments(project_id):
         environments_content += comic_read_environment(project_id, name) + "\n\n---\n\n"
@@ -158,7 +159,7 @@ def comic_qa_check_chapter(project_id: str, chapter_id: str, openai_client, mode
 
     result_text = response.choices[0].message.content
 
-    # 提取 JSON（AI 可能用 markdown 代码块包裹）
+    # 模型可能返回 ```json ... ``` 或普通代码块，这里统一剥掉外层 Markdown 再解析。
     if "```json" in result_text:
         result_text = result_text.split("```json")[1].split("```")[0]
     elif "```" in result_text:
@@ -176,6 +177,7 @@ def comic_qa_check_chapter(project_id: str, chapter_id: str, openai_client, mode
         report += f"❌ 发现 {len(result['issues'])} 个问题：\n\n"
         severity_emoji = {"critical": "🔴", "major": "🟡", "minor": "🟢"}
         for i, issue in enumerate(result["issues"], 1):
+            # 严重程度转 emoji 只影响报告可读性，不参与机器判断。
             emoji = severity_emoji.get(issue["severity"], "⚪")
             report += f"### {i}. {emoji} {issue['type']}\n"
             report += f"**严重程度**：{issue['severity']}\n"

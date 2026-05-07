@@ -16,6 +16,7 @@ def _load_dotenv(path: Path) -> dict:
 
     env_vars = {}
     for raw_line in path.read_text(encoding="utf-8").splitlines():
+        # 忽略空行、注释行和不含等号的行，兼容手写 .env。
         line = raw_line.strip()
         if not line or line.startswith("#") or "=" not in line:
             continue
@@ -43,6 +44,7 @@ def load_config() -> dict:
     api_base_url = os.getenv("BASE_URL") or dotenv_cfg.get("BASE_URL") or file_cfg.get("api_base_url")
     model = os.getenv("MODEL_NAME") or dotenv_cfg.get("MODEL_NAME") or file_cfg.get("model")
 
+    # 显式收集缺失项，一次性告诉用户缺了哪些配置，避免逐个报错反复运行。
     missing = []
     if not api_key:
         missing.append("API_KEY")

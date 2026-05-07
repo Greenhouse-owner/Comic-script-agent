@@ -32,6 +32,7 @@ def validate_modification_instruction(instruction: Dict) -> Dict:
         return {"ok": False, "error": "instruction must be object"}
 
     for key in ("target", "content", "constraints"):
+        # 修改指令必须是结构化的三段式，避免 Lead/Agent 把自然语言误当作可执行补丁。
         if key not in instruction:
             return {"ok": False, "error": f"instruction.{key} is required"}
 
@@ -40,6 +41,7 @@ def validate_modification_instruction(instruction: Dict) -> Dict:
         return {"ok": False, "error": "instruction.constraints must be non-empty list"}
 
     for required in REQUIRED_V3_CONSTRAINTS:
+        # V3 数据库保护约束必须随每次修改一起出现，防止角色/场景被破坏性降级。
         if required not in constraints:
             return {"ok": False, "error": f"missing v3 constraint: {required}"}
 
@@ -84,12 +86,14 @@ def apply_modification_instruction(
     )
 
     if character_name:
+        # 采用追加补丁块而不是覆盖全文，保留历史事实来源，方便回溯修改原因。
         old_text = comic_read_character(project_id, character_name)
         new_text = old_text + patch_block
         write_result = comic_write_character(project_id, character_name, new_text)
         return {"success": True, "target_type": "character", "name": character_name, "write": write_result}
 
     if environment_name:
+        # 场景修改同样走追加记录，避免把原有视觉锚点和氛围信息静默覆盖。
         old_text = comic_read_environment(project_id, environment_name)
         new_text = old_text + patch_block
         write_result = comic_write_environment(project_id, environment_name, new_text)
