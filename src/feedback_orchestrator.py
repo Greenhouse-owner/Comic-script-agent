@@ -53,6 +53,8 @@ class FeedbackOrchestrator:
             .get("result", {})
             .get("instruction", {})
         )
+        if not instruction:
+            instruction = self.build_fallback_instruction(user_input, classification, project_id, chapter_id)
         validation = validate_modification_instruction(instruction)
         if not validation.get("ok"):
             return {
@@ -77,7 +79,10 @@ class FeedbackOrchestrator:
                     kwargs["environment_name"] = target_name
                 else:
                     kwargs["character_name"] = target_name
-                apply_result = apply_modification_instruction(**kwargs)
+                try:
+                    apply_result = apply_modification_instruction(**kwargs)
+                except Exception as exc:
+                    apply_result = {"success": False, "error": f"direct_apply_failed: {type(exc).__name__}: {exc}", "will_create_follow_up": True}
             follow_up = self.build_architect_follow_up(project_id, chapter_id, instruction)
 
         return {
@@ -89,6 +94,60 @@ class FeedbackOrchestrator:
             "apply_result": apply_result,
             "bot_follow_up": follow_up,
         }
+
+    @classmethod
+    def build_fallback_instruction(cls, user_input: str, classification: Dict[str, Any], project_id: str, chapter_id: str) -> Dict[str, Any]:
+        target = cls.infer_fallback_target(user_input, classification, chapter_id)
+        constraints = ["Level 只升不降", "视觉锚点不删", "与既有章节设定一致"]
+        if any(k in user_input for k in ["分镜", "格", "页", "镜头", "画面", "storyboard", "panel"]):
+            constraints.extend(["不改写剧本事实", "保持阅读顺序清晰"])
+        elif any(k in user_input for k in ["剧本", "对白", "旁白", "情节", "script"]):
+            constraints.extend(["保持角色和世界观连续性", "后续分镜需重新检查一致性"])
+        else:
+            constraints.append("如果目标名称不精确，按当前项目最相关文件处理")
+        return {
+            "target": target,
+            "content": user_input.strip() or "按用户反馈进行修改。",
+            "constraints": list(dict.fromkeys(constraints)),
+        }
+
+    @classmethod
+    def infer_fallback_target(cls, user_input: str, classification: Dict[str, Any], chapter_id: str) -> str:
+        text = user_input or ""
+        if any(k in text for k in ["分镜", "格", "页", "镜头", "画面", "storyboard", "panel"]):
+            detail = cls._extract_page_panel_hint(text)
+            return f"分镜 storyboard.md 的{detail or '对应页/格'}"
+        if any(k in text for k in ["剧本", "对白", "旁白", "情节", "script"]):
+            return f"剧本 script.md 的{chapter_id or '当前章节'}对应段落"
+        md_match = re.search(r"([^\s/\\]+\.md)", text)
+        if md_match:
+            md_name = md_match.group(1)
+            if any(k in text for k in ["环境", "场景", "地点"]):
+                return f"场景 {md_name} 的相关字段"
+            return f"角色 {md_name} 的相关字段"
+        name_match = re.search(r"(?:把|将|给)?([\u4e00-\u9fffA-Za-z0-9_\-]{2,})(?:角色|人物|主角|配角)", text)
+        if name_match:
+            return f"角色 {name_match.group(1)}.md 的相关字段"
+        env_match = re.search(r"(?:把|将|给)?([\u4e00-\u9fffA-Za-z0-9_\-]{2,})(?:场景|环境|地点)", text)
+        if env_match:
+            return f"场景 {env_match.group(1)}.md 的相关字段"
+        input_type = str(classification.get("input_type", "")) if isinstance(classification, dict) else ""
+        if "environment" in input_type:
+            return "场景/环境卡的相关字段"
+        if "character" in input_type:
+            return "角色卡的相关字段"
+        return "剧本 script.md 的当前章节相关段落"
+
+    @staticmethod
+    def _extract_page_panel_hint(text: str) -> str:
+        page_match = re.search(r"第\s*([一二三四五六七八九十\d]+)\s*页", text)
+        panel_match = re.search(r"第\s*([一二三四五六七八九十\d]+)\s*(?:格|个格子|panel)", text, flags=re.IGNORECASE)
+        parts = []
+        if page_match:
+            parts.append(f"第 {page_match.group(1)} 页")
+        if panel_match:
+            parts.append(f"第 {panel_match.group(1)} 格")
+        return "".join(parts)
 
     def _read_architect_output(self, chapter_id: str) -> str:
         if not chapter_id:
@@ -180,7 +239,7 @@ class FeedbackOrchestrator:
     def infer_instruction_target_type(target: str) -> str:
         t = (target or "").lower()
         # 分镜相关
-        if any(k in t for k in ["分镜", "storyboard", "page", "格子", "panel"]):
+        if any(k in t for k in ["分镜", "storyboard", "page", "页", "格子", "格", "panel"]):
             return "storyboard"
         # 剧本相关
         if any(k in t for k in ["剧本", "script", "对白", "dialogue"]):
@@ -195,14 +254,17 @@ class FeedbackOrchestrator:
 
     @staticmethod
     def extract_name_from_target(target: str) -> str:
-        text = target or ""
-        md_match = re.search(r"([^\s/\\]+)\.md", text)
+        text = target or ''
+        md_match = re.search(r'([^\s/\\]+)\.md', text)
         if md_match:
             return md_match.group(1)
-        quote_match = re.search(r"[“\"]([^”\"]+)[”\"]", text)
+        quote_match = re.search(r'[“\”]([^”\”]+)[“\”]', text)
         if quote_match:
             return quote_match.group(1)
-        token_match = re.search(r"([\u4e00-\u9fffA-Za-z0-9_\-]{2,})", text)
+        name_match = re.search(r'^([\u4e00-\u9fffA-Za-z0-9_\-]+)(?:角色|场景|环境|设定|卡)', text)
+        if name_match:
+            return name_match.group(1)
+        token_match = re.search(r'([\u4e00-\u9fffA-Za-z0-9_\-]{2,})', text)
         if token_match:
             return token_match.group(1)
-        return ""
+        return ''

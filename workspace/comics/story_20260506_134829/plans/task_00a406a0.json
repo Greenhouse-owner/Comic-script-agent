@@ -1,0 +1,15 @@
+{
+  "task_id": "task_00a406a0",
+  "agent": "director_bot",
+  "project_id": "story_20260506_134829",
+  "chapter_id": "ch01",
+  "task_type": "director_feedback_revision",
+  "status": "approved",
+  "steps": [],
+  "risk_checklist": [
+    "未知任务类型，需要人工或 Lead 进一步确认"
+  ],
+  "requires_user_approval": true,
+  "created_at": "2026-05-07T18:20:40.634140",
+  "planning_mode": "fixed"
+}

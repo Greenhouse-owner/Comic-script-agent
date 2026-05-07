@@ -1,19 +1,21 @@
 # 原始用户输入
 
-**保存时间**：2026-05-06 14:22:20
+**保存时间**：2026-05-07 17:47:32
 
 ## 分类结果
 ```json
 {
   "input_type": "character_notes",
-  "confidence": 0.95,
+  "confidence": 0.9,
   "key_info": {
     "project_hint": "story_20260506_134829",
     "chapter_hint": "ch01",
-    "topic": "修改角色卡：米娅的角色设定（年龄、外貌、物品、性格）",
-    "missing_info": []
+    "topic": "米娅角色设定调整",
+    "missing_info": [
+      "没有需要补充的事实源"
+    ]
   },
-  "suggestion": "更新角色卡，核对是否承接当前故事方向和细纲需求。"
+  "suggestion": "根据用户需求更新角色卡信息"
 }
 ```
 
@@ -25,22 +27,22 @@
   "facts": {
     "story_direction": "",
     "worldbuilding": "",
-    "chapter_outlines": [],
+    "chapter_outlines": [
+      {
+        "chapter_id": "ch01",
+        "title": "",
+        "summary": ""
+      }
+    ],
     "characters": [
       {
         "name": "米娅",
         "role": "",
-        "description": "她虽然孤独但很乐观，喜欢唱歌。",
+        "description": "12岁，拥有一头卷曲的棕色长发，总是扎成马尾。性格孤独但乐观，喜欢唱歌。拥有祖母留下的重要怀表。",
         "visual_anchors": [
-          "12 岁",
           "卷曲的棕色长发",
-          "扎成马尾"
-        ],
-        "special_items": [
-          {
-            "name": "祖母留下的怀表",
-            "description": "一个在故事中很重要的特殊物品。"
-          }
+          "马尾",
+          "怀表"
         ]
       }
     ],
@@ -50,7 +52,9 @@
   "missing": [
     "story_bible",
     "chapter_outlines",
-    "character_cards"
+    "character_cards",
+    "environment_cards",
+    "chapter_script"
   ],
   "recommended_next": {
     "task_type": "architect_delivery",

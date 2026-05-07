@@ -13,4 +13,6 @@
 ```
 
 ## 已有事实源
+- `story_20260506_134829/chapter_outlines.md`
+- `story_20260506_134829/chapters/ch01/outline.md`
 - `story_20260506_134829/state/characters/米娅.md`

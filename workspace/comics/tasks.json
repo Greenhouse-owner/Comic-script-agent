@@ -16613,10 +16613,57 @@
       ]
     },
     "created_at": "2026-05-04T14:21:41.069778",
-    "updated_at": "2026-05-04T14:21:57.357000",
+    "updated_at": "2026-05-07T17:51:00.041012",
     "result": {
+      "type": "task_result",
+      "task_id": "task_3a7664d6",
+      "assignee": "architect_bot",
+      "title": "Architect 交付 ch01",
       "success": true,
-      "output": "已进入待机状态。请解决必要输入文件的读取问题后，重新启动任务分配。"
+      "output": "已进入待机状态。请解决必要输入文件的读取问题后，重新启动任务分配。",
+      "metadata": {
+        "protocol_version": "v1",
+        "task_type": "architect_delivery",
+        "project_id": "story_20260504_142138",
+        "chapter_id": "ch01",
+        "goal": "基于 story_20260504_142138/story_direction.md 生成完整创作产物（story_bible、章纲、角色卡、场景卡、剧本）",
+        "deliverables": [
+          "story_20260504_142138/chapters/ch01/script.md"
+        ],
+        "required_inputs": [
+          "story_20260504_142138/brief.md"
+        ],
+        "state_inputs": {
+          "characters": "story_20260504_142138/state/characters",
+          "environments": "story_20260504_142138/state/environments"
+        },
+        "quality_bar": [
+          "剧情完整",
+          "角色动机清晰",
+          "角色与场景设定一致",
+          "可供 Director 直接消费"
+        ],
+        "required_deliverables": [
+          "story_20260504_142138/chapters/ch01/script.md"
+        ],
+        "qa_target": "qa_bot",
+        "handoff_target": "director_bot",
+        "submission_target": "qa_bot",
+        "use_dynamic_plan": true,
+        "planning_mode": "architect_dynamic_v1",
+        "goal_type": "create_chapter_script",
+        "chapter_ids": [
+          "ch01"
+        ],
+        "target_artifacts": [
+          "story_bible",
+          "chapter_outlines",
+          "chapter_outline",
+          "character_cards",
+          "environment_cards",
+          "chapter_script"
+        ]
+      }
     }
   },
   "task_afe36707": {
@@ -16669,10 +16716,57 @@
       ]
     },
     "created_at": "2026-05-04T14:27:26.118027",
-    "updated_at": "2026-05-04T14:27:40.348974",
+    "updated_at": "2026-05-07T17:51:00.058341",
     "result": {
+      "type": "task_result",
+      "task_id": "task_afe36707",
+      "assignee": "architect_bot",
+      "title": "Architect 交付 ch01",
       "success": true,
-      "output": "我已进入待机状态。如果问题解决后需要重新开始任务，请重新分配任务给我。"
+      "output": "我已进入待机状态。如果问题解决后需要重新开始任务，请重新分配任务给我。",
+      "metadata": {
+        "protocol_version": "v1",
+        "task_type": "architect_delivery",
+        "project_id": "story_20260504_142722",
+        "chapter_id": "ch01",
+        "goal": "基于 story_20260504_142722/story_direction.md 生成完整创作产物（story_bible、章纲、角色卡、场景卡、剧本）",
+        "deliverables": [
+          "story_20260504_142722/chapters/ch01/script.md"
+        ],
+        "required_inputs": [
+          "story_20260504_142722/brief.md"
+        ],
+        "state_inputs": {
+          "characters": "story_20260504_142722/state/characters",
+          "environments": "story_20260504_142722/state/environments"
+        },
+        "quality_bar": [
+          "剧情完整",
+          "角色动机清晰",
+          "角色与场景设定一致",
+          "可供 Director 直接消费"
+        ],
+        "required_deliverables": [
+          "story_20260504_142722/chapters/ch01/script.md"
+        ],
+        "qa_target": "qa_bot",
+        "handoff_target": "director_bot",
+        "submission_target": "qa_bot",
+        "use_dynamic_plan": true,
+        "planning_mode": "architect_dynamic_v1",
+        "goal_type": "create_chapter_script",
+        "chapter_ids": [
+          "ch01"
+        ],
+        "target_artifacts": [
+          "story_bible",
+          "chapter_outlines",
+          "chapter_outline",
+          "character_cards",
+          "environment_cards",
+          "chapter_script"
+        ]
+      }
     }
   },
   "task_9e16c983": {
@@ -16725,16 +16819,63 @@
       ]
     },
     "created_at": "2026-05-04T14:44:31.441916",
-    "updated_at": "2026-05-04T14:46:09.848970",
+    "updated_at": "2026-05-07T17:51:00.071407",
     "result": {
+      "type": "task_result",
+      "task_id": "task_9e16c983",
+      "assignee": "architect_bot",
+      "title": "Architect 交付 ch01",
       "success": true,
-      "output": "任务已经完成，所有相关创作产物按计划交付并通知相关审核环节，等待下一步指令。"
+      "output": "任务已经完成，所有相关创作产物按计划交付并通知相关审核环节，等待下一步指令。",
+      "metadata": {
+        "protocol_version": "v1",
+        "task_type": "architect_delivery",
+        "project_id": "story_20260504_144428",
+        "chapter_id": "ch01",
+        "goal": "基于 story_20260504_144428/story_direction.md 生成完整创作产物（story_bible、章纲、角色卡、场景卡、剧本）",
+        "deliverables": [
+          "story_20260504_144428/chapters/ch01/script.md"
+        ],
+        "required_inputs": [
+          "story_20260504_144428/brief.md"
+        ],
+        "state_inputs": {
+          "characters": "story_20260504_144428/state/characters",
+          "environments": "story_20260504_144428/state/environments"
+        },
+        "quality_bar": [
+          "剧情完整",
+          "角色动机清晰",
+          "角色与场景设定一致",
+          "可供 Director 直接消费"
+        ],
+        "required_deliverables": [
+          "story_20260504_144428/chapters/ch01/script.md"
+        ],
+        "qa_target": "qa_bot",
+        "handoff_target": "director_bot",
+        "submission_target": "qa_bot",
+        "use_dynamic_plan": true,
+        "planning_mode": "architect_dynamic_v1",
+        "goal_type": "create_chapter_script",
+        "chapter_ids": [
+          "ch01"
+        ],
+        "target_artifacts": [
+          "story_bible",
+          "chapter_outlines",
+          "chapter_outline",
+          "character_cards",
+          "environment_cards",
+          "chapter_script"
+        ]
+      }
     }
   },
   "task_5a1cc28e": {
     "id": "task_5a1cc28e",
     "title": "Architect 交付 ch01",
-    "status": "in_progress",
+    "status": "error",
     "assignee": "architect_bot",
     "depends_on": [],
     "metadata": {
@@ -16781,7 +16922,58 @@
       ]
     },
     "created_at": "2026-05-06T13:37:04.223682",
-    "updated_at": "2026-05-06T13:37:08.877005"
+    "updated_at": "2026-05-07T17:51:00.082869",
+    "result": {
+      "type": "task_result",
+      "task_id": "task_5a1cc28e",
+      "assignee": "architect_bot",
+      "title": "Architect 交付 ch01",
+      "success": false,
+      "error": "[Errno 32] Broken pipe",
+      "metadata": {
+        "protocol_version": "v1",
+        "task_type": "architect_delivery",
+        "project_id": "story_20260506_133659",
+        "chapter_id": "ch01",
+        "goal": "基于 story_20260506_133659/story_direction.md 生成完整创作产物（story_bible、章纲、角色卡、场景卡、剧本）",
+        "deliverables": [
+          "story_20260506_133659/chapters/ch01/script.md"
+        ],
+        "required_inputs": [
+          "story_20260506_133659/brief.md"
+        ],
+        "state_inputs": {
+          "characters": "story_20260506_133659/state/characters",
+          "environments": "story_20260506_133659/state/environments"
+        },
+        "quality_bar": [
+          "剧情完整",
+          "角色动机清晰",
+          "角色与场景设定一致",
+          "可供 Director 直接消费"
+        ],
+        "required_deliverables": [
+          "story_20260506_133659/chapters/ch01/script.md"
+        ],
+        "qa_target": "qa_bot",
+        "handoff_target": "director_bot",
+        "submission_target": "qa_bot",
+        "use_dynamic_plan": true,
+        "planning_mode": "architect_dynamic_v1",
+        "goal_type": "create_chapter_script",
+        "chapter_ids": [
+          "ch01"
+        ],
+        "target_artifacts": [
+          "story_bible",
+          "chapter_outlines",
+          "chapter_outline",
+          "character_cards",
+          "environment_cards",
+          "chapter_script"
+        ]
+      }
+    }
   },
   "task_c247de09": {
     "id": "task_c247de09",
@@ -16833,10 +17025,57 @@
       ]
     },
     "created_at": "2026-05-06T13:48:33.398844",
-    "updated_at": "2026-05-06T13:50:58.293936",
+    "updated_at": "2026-05-07T17:51:00.091798",
     "result": {
+      "type": "task_result",
+      "task_id": "task_c247de09",
+      "assignee": "architect_bot",
+      "title": "Architect 交付 ch01",
       "success": true,
-      "output": "任务已完成，包括从故事大纲到章节剧本的全部目标产出文件已交付，同时已将 ch01 剧本交给 Director 处理。等待进一步反馈或新任务分配。"
+      "output": "任务已完成，包括从故事大纲到章节剧本的全部目标产出文件已交付，同时已将 ch01 剧本交给 Director 处理。等待进一步反馈或新任务分配。",
+      "metadata": {
+        "protocol_version": "v1",
+        "task_type": "architect_delivery",
+        "project_id": "story_20260506_134829",
+        "chapter_id": "ch01",
+        "goal": "基于 story_20260506_134829/story_direction.md 生成完整创作产物（story_bible、章纲、角色卡、场景卡、剧本）",
+        "deliverables": [
+          "story_20260506_134829/chapters/ch01/script.md"
+        ],
+        "required_inputs": [
+          "story_20260506_134829/brief.md"
+        ],
+        "state_inputs": {
+          "characters": "story_20260506_134829/state/characters",
+          "environments": "story_20260506_134829/state/environments"
+        },
+        "quality_bar": [
+          "剧情完整",
+          "角色动机清晰",
+          "角色与场景设定一致",
+          "可供 Director 直接消费"
+        ],
+        "required_deliverables": [
+          "story_20260506_134829/chapters/ch01/script.md"
+        ],
+        "qa_target": "qa_bot",
+        "handoff_target": "director_bot",
+        "submission_target": "qa_bot",
+        "use_dynamic_plan": true,
+        "planning_mode": "architect_dynamic_v1",
+        "goal_type": "create_chapter_script",
+        "chapter_ids": [
+          "ch01"
+        ],
+        "target_artifacts": [
+          "story_bible",
+          "chapter_outlines",
+          "chapter_outline",
+          "character_cards",
+          "environment_cards",
+          "chapter_script"
+        ]
+      }
     }
   },
   "task_9e725fee": {
@@ -17079,16 +17318,73 @@
       "use_ai_planner": false
     },
     "created_at": "2026-05-06T14:22:22.208546",
-    "updated_at": "2026-05-06T14:22:39.482497",
+    "updated_at": "2026-05-07T17:51:00.100843",
     "result": {
+      "type": "task_result",
+      "task_id": "task_7af045c4",
+      "assignee": "architect_bot",
+      "title": "Architect 交付 ch01",
       "success": true,
-      "output": "通过自动 idle 错误触发该步骤可能问题预警后直接中止...-> NOT_REPL"
+      "output": "通过自动 idle 错误触发该步骤可能问题预警后直接中止...-> NOT_REPL",
+      "metadata": {
+        "protocol_version": "v1",
+        "task_type": "architect_delivery",
+        "project_id": "story_20260506_134829",
+        "chapter_id": "ch01",
+        "goal": "基于 story_20260506_134829/story_direction.md 生成完整创作产物（story_bible、章纲、角色卡、场景卡、剧本）",
+        "deliverables": [
+          "story_20260506_134829/chapters/ch01/script.md"
+        ],
+        "required_inputs": [
+          "story_20260506_134829/brief.md"
+        ],
+        "state_inputs": {
+          "characters": "story_20260506_134829/state/characters",
+          "environments": "story_20260506_134829/state/environments"
+        },
+        "quality_bar": [
+          "剧情完整",
+          "角色动机清晰",
+          "角色与场景设定一致",
+          "可供 Director 直接消费"
+        ],
+        "required_deliverables": [
+          "story_20260506_134829/chapters/ch01/script.md"
+        ],
+        "qa_target": "qa_bot",
+        "handoff_target": "director_bot",
+        "submission_target": "qa_bot",
+        "planner_decision": {
+          "use_dynamic_plan": false,
+          "use_ai_planner": false,
+          "confidence": 0.95,
+          "reason": "任务为明确的角色卡修改请求，单章信息完整，无需动态规划或 AI Planner。",
+          "risk_flags": [
+            "revision_request"
+          ]
+        },
+        "use_dynamic_plan": true,
+        "planning_mode": "architect_dynamic_v1",
+        "goal_type": "create_chapter_script",
+        "chapter_ids": [
+          "ch01"
+        ],
+        "target_artifacts": [
+          "story_bible",
+          "chapter_outlines",
+          "chapter_outline",
+          "character_cards",
+          "environment_cards",
+          "chapter_script"
+        ],
+        "use_ai_planner": false
+      }
     }
   },
   "task_a9dac06c": {
     "id": "task_a9dac06c",
     "title": "Director 反馈修订 ch01 分镜",
-    "status": "pending",
+    "status": "done",
     "assignee": "director_bot",
     "depends_on": [],
     "metadata": {
@@ -17125,6 +17421,311 @@
       ]
     },
     "created_at": "2026-05-06T14:22:46.324969",
-    "updated_at": "2026-05-06T14:22:46.324981"
+    "updated_at": "2026-05-07T17:51:00.108320",
+    "result": {
+      "type": "task_result",
+      "task_id": "task_a9dac06c",
+      "assignee": "director_bot",
+      "title": "Director 反馈修订 ch01 分镜",
+      "success": true,
+      "output": "由于当前权限限制，无法直接修改角色和环境信息。我已完成场景描述的确认和准备。下一步我将编写分镜脚本草稿，并提交所有内容。请稍后。",
+      "metadata": {
+        "protocol_version": "v1",
+        "task_type": "director_feedback_revision",
+        "project_id": "story_20260506_134829",
+        "chapter_id": "ch01",
+        "instruction": {
+          "target": "ch01 分镜.md 的第1页第1格和第3格",
+          "content": {
+            "第1页第1格": {
+              "场景描述修改": {
+                "时间": "黄昏时分，橙红色晚霞",
+                "新增元素": "几只海鸥在灯塔周围飞翔"
+              }
+            },
+            "第1页第3格": {
+              "视觉动作修改": "米娅由看窗户改为看手中的怀表",
+              "对白内容修改": "奶奶说，这个怀表会在特殊的时刻发光..."
+            }
+          },
+          "constraints": [
+            "Level 只升不降",
+            "视觉锚点不删",
+            "保持与既有故事背景一致"
+          ]
+        },
+        "submission_target": "lead",
+        "qa_target": "qa_bot",
+        "quality_bar": [
+          "Level 只升不降",
+          "视觉锚点不删",
+          "与既有章节设定一致"
+        ]
+      }
+    }
+  },
+  "task_a47096ee": {
+    "id": "task_a47096ee",
+    "title": "Architect 交付 ch01",
+    "status": "in_progress",
+    "assignee": "architect_bot",
+    "depends_on": [],
+    "metadata": {
+      "protocol_version": "v1",
+      "task_type": "architect_delivery",
+      "project_id": "story_20260506_134829",
+      "chapter_id": "ch01",
+      "goal": "基于 story_20260506_134829/story_direction.md 生成完整创作产物（story_bible、章纲、角色卡、场景卡、剧本）",
+      "deliverables": [
+        "story_20260506_134829/chapters/ch01/script.md"
+      ],
+      "required_inputs": [
+        "story_20260506_134829/brief.md"
+      ],
+      "state_inputs": {
+        "characters": "story_20260506_134829/state/characters",
+        "environments": "story_20260506_134829/state/environments"
+      },
+      "quality_bar": [
+        "剧情完整",
+        "角色动机清晰",
+        "角色与场景设定一致",
+        "可供 Director 直接消费"
+      ],
+      "required_deliverables": [
+        "story_20260506_134829/chapters/ch01/script.md"
+      ],
+      "qa_target": "qa_bot",
+      "handoff_target": "director_bot",
+      "submission_target": "qa_bot",
+      "planner_decision": {
+        "use_dynamic_plan": true,
+        "use_ai_planner": false,
+        "confidence": 0.9,
+        "reason": "任务为角色调整，信息完整，非多章节或复杂规划需求。",
+        "risk_flags": []
+      },
+      "use_dynamic_plan": true,
+      "planning_mode": "architect_dynamic_v1",
+      "goal_type": "create_chapter_script",
+      "chapter_ids": [
+        "ch01"
+      ],
+      "target_artifacts": [
+        "story_bible",
+        "chapter_outlines",
+        "chapter_outline",
+        "character_cards",
+        "environment_cards",
+        "chapter_script"
+      ],
+      "use_ai_planner": false
+    },
+    "created_at": "2026-05-07T17:47:36.522305",
+    "updated_at": "2026-05-07T17:47:39.855516"
+  },
+  "task_00a406a0": {
+    "id": "task_00a406a0",
+    "title": "Director 反馈修订 ch01 分镜",
+    "status": "in_progress",
+    "assignee": "director_bot",
+    "depends_on": [],
+    "metadata": {
+      "protocol_version": "v1",
+      "task_type": "director_feedback_revision",
+      "project_id": "story_20260506_134829",
+      "chapter_id": "ch01",
+      "instruction": {
+        "target": "第1页第1格（灯塔远景）",
+        "content": "将场景时间改为黄昏，天空增加橙红色晚霞，加入几只海鸥在灯塔周围飞翔",
+        "constraints": [
+          "Level 只升不降",
+          "视觉锚点不删"
+        ]
+      },
+      "submission_target": "lead",
+      "qa_target": "qa_bot",
+      "quality_bar": [
+        "Level 只升不降",
+        "视觉锚点不删",
+        "与既有章节设定一致"
+      ]
+    },
+    "created_at": "2026-05-07T18:18:18.293219",
+    "updated_at": "2026-05-07T18:20:40.615011"
+  },
+  "task_0bdc2b76": {
+    "id": "task_0bdc2b76",
+    "title": "Architect 反馈修订 ch01",
+    "status": "done",
+    "assignee": "architect_bot",
+    "depends_on": [],
+    "metadata": {
+      "protocol_version": "v1",
+      "task_type": "architect_feedback_revision",
+      "project_id": "story_20260506_134829",
+      "chapter_id": "ch01",
+      "instruction": {
+        "target": "角色名.md 的角色设定部分",
+        "content": "将米娅的年龄调整为12岁，补充外貌特征：她有一头卷曲的棕色长发并总是扎成马尾，增加一个她拥有的祖母留下的重要怀表，性格描写为孤独但乐观且喜欢唱歌。",
+        "constraints": [
+          "Level 只升不降",
+          "视觉锚点不删"
+        ]
+      },
+      "handoff_target": "director_bot",
+      "submission_target": "lead",
+      "qa_target": "qa_bot",
+      "quality_bar": [
+        "Level 只升不降",
+        "视觉锚点不删",
+        "与既有章节设定一致"
+      ]
+    },
+    "created_at": "2026-05-07T18:27:16.904542",
+    "updated_at": "2026-05-07T18:27:35.091502",
+    "result": {
+      "success": true,
+      "protocol": "architect_feedback_revision",
+      "handoff": {
+        "type": "handoff",
+        "from_role": "architect",
+        "project_id": "story_20260506_134829",
+        "chapter_id": "ch01",
+        "goal": "基于反馈完成剧本修订，并交付 Director 二次处理",
+        "deliverables": [
+          "story_20260506_134829/chapters/ch01/script.md"
+        ],
+        "required_deliverables": [
+          "story_20260506_134829/chapters/ch01/script.md"
+        ],
+        "state_inputs": {
+          "characters": "story_20260506_134829/state/characters",
+          "environments": "story_20260506_134829/state/environments"
+        },
+        "summary": "Architect 已完成反馈修订，已交付更新剧本。",
+        "revision": true
+      },
+      "submission": {
+        "type": "submission",
+        "from_role": "architect",
+        "project_id": "story_20260506_134829",
+        "chapter_id": "ch01",
+        "goal": "反馈修订提交",
+        "deliverables": [
+          "story_20260506_134829/chapters/ch01/script.md"
+        ],
+        "updated_files": [
+          "story_20260506_134829/chapters/ch01/script.md"
+        ],
+        "self_check": [
+          "已写入反馈修订记录",
+          "保持 Level 只升不降",
+          "保持视觉锚点不删"
+        ],
+        "quality_bar": [
+          "Level 只升不降",
+          "视觉锚点不删",
+          "与既有章节设定一致"
+        ],
+        "summary": "Architect 请求 Director 与 QA 基于修订稿重新验收。",
+        "revision": true
+      }
+    }
+  },
+  "task_0f03b06d": {
+    "id": "task_0f03b06d",
+    "title": "Director 反馈修订 ch01 分镜",
+    "status": "done",
+    "assignee": "director_bot",
+    "depends_on": [],
+    "metadata": {
+      "protocol_version": "v1",
+      "task_type": "director_feedback_revision",
+      "project_id": "story_20260506_134829",
+      "chapter_id": "ch01",
+      "instruction": {
+        "target": "分镜 storyboard.md 的第 1 页第 1 格",
+        "content": "将灯塔远景改为黄昏时分，天空增加橙红色晚霞，同时在灯塔周围增加几只海鸥飞翔，增强场景的氛围和视觉效果。",
+        "constraints": [
+          "Level 只升不降",
+          "视觉锚点不删"
+        ]
+      },
+      "submission_target": "lead",
+      "qa_target": "qa_bot",
+      "quality_bar": [
+        "Level 只升不降",
+        "视觉锚点不删",
+        "与既有章节设定一致"
+      ]
+    },
+    "created_at": "2026-05-07T18:27:45.188294",
+    "updated_at": "2026-05-07T18:29:00.279960",
+    "result": {
+      "success": true,
+      "protocol": "director_delivery_pipeline",
+      "submission": {
+        "type": "submission",
+        "from_role": "director",
+        "task_type": "director_delivery",
+        "project_id": "story_20260506_134829",
+        "chapter_id": "ch01",
+        "goal": null,
+        "deliverables": [
+          "story_20260506_134829/chapters/ch01/storyboard.md"
+        ],
+        "updated_files": [
+          "story_20260506_134829/chapters/ch01/storyboard.md",
+          "story_20260506_134829/chapters/ch01/director_plan/selected_context.json",
+          "story_20260506_134829/chapters/ch01/director_plan/storyboard_plan.json",
+          "story_20260506_134829/chapters/ch01/director_plan/pipeline_status.json"
+        ],
+        "depends_on_script": [
+          "story_20260506_134829/chapters/ch01/script.md"
+        ],
+        "director_plan_files": {
+          "selected_context": "story_20260506_134829/chapters/ch01/director_plan/selected_context.json",
+          "storyboard_plan": "story_20260506_134829/chapters/ch01/director_plan/storyboard_plan.json",
+          "pipeline_status": "story_20260506_134829/chapters/ch01/director_plan/pipeline_status.json"
+        },
+        "input_files_used": {
+          "script": "story_20260506_134829/chapters/ch01/script.md",
+          "characters": [],
+          "environments": []
+        },
+        "storyboard_summary": {
+          "pages": 12,
+          "panels": 48,
+          "average_panels_per_page": 4.0,
+          "large_panel_pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "splash_pages": [],
+          "warnings": []
+        },
+        "self_check": [
+          "已生成 selected_context.json",
+          "已生成 storyboard_plan.json",
+          "已生成 storyboard.md"
+        ],
+        "quality_bar": [
+          "Level 只升不降",
+          "视觉锚点不删",
+          "与既有章节设定一致"
+        ],
+        "revision": true,
+        "diff_summary": "基于反馈修订后的剧本，已刷新分镜规划与镜头依据。",
+        "summary": "Director 已完成三阶段分镜 pipeline。",
+        "user_visible_summary": "Director 已完成 ch01 分镜草稿：`story_20260506_134829/chapters/ch01/storyboard.md`。规划摘要：共 12 页、48 格。",
+        "requires_user_review": true
+      },
+      "deliverables": [
+        "story_20260506_134829/chapters/ch01/storyboard.md"
+      ]
+    }
   }
 }

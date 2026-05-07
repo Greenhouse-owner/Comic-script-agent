@@ -669,6 +669,32 @@ class LeadAgent:
         data = classify.get("data", {})
         input_type = data.get("input_type")
         confidence = float(data.get("confidence", 0.0) or 0.0)
+
+        if self.feedback_orchestrator.is_feedback_text(user_input):
+            self.feedback_orchestrator.aux_subagent = self.aux_subagent
+            self.feedback_orchestrator.submissions = self.submissions
+            feedback_result = self.feedback_orchestrator.process_feedback(
+                user_input=user_input,
+                classification=data,
+                project_id=project_id,
+                chapter_id=chapter_id,
+            )
+            if feedback_result is None:
+                return None
+            follow_up = feedback_result.get("bot_follow_up") or feedback_result.get("architect_follow_up", {})
+            if follow_up.get("success") and follow_up.get("metadata"):
+                task_id = self.task_manager.create(
+                    title=follow_up["title"],
+                    assignee=follow_up["assignee"],
+                    metadata=follow_up["metadata"],
+                )
+                message = dict(follow_up.get("message", {}))
+                message["task_id"] = task_id
+                assignee = follow_up["assignee"]
+                self.message_bus.send("lead", assignee, message)
+                feedback_result["bot_follow_up"] = {"success": True, "task_id": task_id, "assignee": assignee}
+            return json.dumps(feedback_result, ensure_ascii=False)
+
         if confidence < 0.55:
             return None
 
@@ -728,33 +754,6 @@ class LeadAgent:
                     ensure_ascii=False,
                 )
             return None
-
-        if self.feedback_orchestrator.is_feedback_text(user_input):
-            self.feedback_orchestrator.aux_subagent = self.aux_subagent
-            self.feedback_orchestrator.submissions = self.submissions
-            feedback_result = self.feedback_orchestrator.process_feedback(
-                user_input=user_input,
-                classification=data,
-                project_id=project_id,
-                chapter_id=chapter_id,
-            )
-            if feedback_result is None:
-                return None
-            # 支持 bot_follow_up（新版）和 architect_follow_up（兼容旧版）
-            follow_up = feedback_result.get("bot_follow_up") or feedback_result.get("architect_follow_up", {})
-            if follow_up.get("success") and follow_up.get("metadata"):
-                task_id = self.task_manager.create(
-                    title=follow_up["title"],
-                    assignee=follow_up["assignee"],
-                    metadata=follow_up["metadata"],
-                )
-                message = dict(follow_up.get("message", {}))
-                message["task_id"] = task_id
-                # 根据 assignee 发送消息到对应的 Bot
-                assignee = follow_up["assignee"]
-                self.message_bus.send("lead", assignee, message)
-                feedback_result["bot_follow_up"] = {"success": True, "task_id": task_id, "assignee": assignee}
-            return json.dumps(feedback_result, ensure_ascii=False)
 
         return None
 

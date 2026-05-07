@@ -841,7 +841,7 @@ class TeammateManager:
             self._emit_event(name, "submission_sent", "已发送 Architect 修订 submission", {"project_id": project_id, "chapter_id": chapter_id, "revision": True})
             return {"success": True, "protocol": "architect_feedback_revision", "handoff": handoff, "submission": submission}
 
-        if task_type == "director_delivery" and project_id and chapter_id:
+        if task_type in {"director_delivery", "director_feedback_revision"} and project_id and chapter_id:
             return self._execute_director_delivery_pipeline(name, task, metadata, project_id, chapter_id, policy_context)
 
         if task_type == "qa_review":
@@ -850,7 +850,7 @@ class TeammateManager:
         return None
 
     def _execute_director_delivery_pipeline(self, name: str, task: dict, metadata: dict, project_id: str, chapter_id: str, policy_context: dict) -> dict:
-        is_revision = bool(metadata.get("revision"))
+        is_revision = bool(metadata.get("revision") or metadata.get("task_type") == "director_feedback_revision")
         input_paths = metadata.get("required_inputs", metadata.get("inputs", []))
         script_path = metadata.get("script_path") or (input_paths[0] if input_paths else f"{project_id}/chapters/{chapter_id}/script.md")
         storyboard_path = metadata.get("output_path") or f"{project_id}/chapters/{chapter_id}/storyboard.md"
@@ -1637,38 +1637,77 @@ class TeammateManager:
 
     def _tool_use_loop(self, name: str, response, conversation_history: List[dict],
                        system_prompt: str, tools: List[dict],
-                       policy_context: Optional[Dict[str, Any]] = None):
+                       policy_context: Optional[Dict[str, Any]] = None,
+                       max_iterations: int = 20):
         """处理工具调用循环，直到 AI 不再请求工具"""
+        iteration_count = 0
+        tool_call_history: List[tuple[str, str]] = []  # (tool_name, tool_input_hash)
+
         while response.choices[0].finish_reason == "tool_calls":
+            iteration_count += 1
+
+            # 检查循环次数限制
+            if iteration_count > max_iterations:
+                error_msg = f"工具循环超过最大迭代次数 {max_iterations}，强制终止。最近调用：{tool_call_history[-5:]}"
+                self._emit_event(name, "tool_loop_max_iterations", error_msg, {"iteration_count": iteration_count, "recent_calls": tool_call_history[-10:]})
+                conversation_history.append({
+                    "role": "user",
+                    "content": f"[系统警告] 工具循环已达到 {max_iterations} 次迭代上限。请立即调用 idle 工具结束任务，或调用 send_message 提交结果。"
+                })
+                # 强制返回，让模型有机会调用 idle
+                break
+
             assistant_msg = response.choices[0].message
             if self._is_architect(name):
-                self._debug_architect("tool_loop_start", f"模型请求工具调用：tool_calls={len(assistant_msg.tool_calls or [])}, history_len={len(conversation_history)}")
+                self._debug_architect("tool_loop_start", f"模型请求工具调用：iteration={iteration_count}, tool_calls={len(assistant_msg.tool_calls or [])}, history_len={len(conversation_history)}")
+
             # 把 assistant 的 tool_calls 消息加入历史
             conversation_history.append(assistant_msg.model_dump())
+
             # 执行每个 tool call 并收集结果
             for tool_call in assistant_msg.tool_calls:
                 fn = tool_call.function
                 tool_input = json.loads(fn.arguments)
+
+                # 记录工具调用历史，用于检测重复调用
+                tool_signature = f"{fn.name}({json.dumps(tool_input, sort_keys=True, ensure_ascii=False)})"
+                tool_hash = f"{fn.name}:{hash(tool_signature)}"
+                tool_call_history.append((fn.name, tool_hash))
+
+                # 检测重复调用（连续3次相同调用）
+                if len(tool_call_history) >= 3:
+                    recent_three = tool_call_history[-3:]
+                    if all(call[1] == recent_three[0][1] for call in recent_three):
+                        warning_msg = f"检测到连续3次相同工具调用：{fn.name}，可能陷入循环"
+                        self._emit_event(name, "tool_loop_repetition_warning", warning_msg, {"tool_name": fn.name, "iteration": iteration_count})
+
                 if self._is_architect(name):
-                    self._debug_architect("tool_call_before", f"准备执行工具：{fn.name}, input={tool_input}", {"tool_name": fn.name, "tool_input": tool_input})
+                    self._debug_architect("tool_call_before", f"准备执行工具：{fn.name}, input={tool_input}, iteration={iteration_count}", {"tool_name": fn.name, "tool_input": tool_input, "iteration": iteration_count})
+
                 result = self._execute_tool(name, fn.name, tool_input, policy_context=policy_context)
+
                 if self._is_architect(name):
-                    self._debug_architect("tool_call_after", f"工具执行完成：{fn.name}, success={result.get('success')}", {"tool_name": fn.name, "result": result})
+                    self._debug_architect("tool_call_after", f"工具执行完成：{fn.name}, success={result.get('success')}, iteration={iteration_count}", {"tool_name": fn.name, "result": result, "iteration": iteration_count})
+
                 conversation_history.append({
                     "role": "tool",
                     "tool_call_id": tool_call.id,
                     "content": json.dumps(result, ensure_ascii=False)
                 })
+
             messages = [{"role": "system", "content": system_prompt}] + conversation_history
             if self._is_architect(name):
-                self._debug_architect("tool_loop_model_before", f"工具结果已写入历史，准备再次调用模型：history_len={len(conversation_history)}")
+                self._debug_architect("tool_loop_model_before", f"工具结果已写入历史，准备再次调用模型：history_len={len(conversation_history)}, iteration={iteration_count}")
+
             response = self.client.chat.completions.create(
                 model=self.config["model"],
                 messages=messages,
                 tools=tools
             )
+
             if self._is_architect(name):
-                self._debug_architect("tool_loop_model_after", f"工具循环后模型返回：finish_reason={response.choices[0].finish_reason}")
+                self._debug_architect("tool_loop_model_after", f"工具循环后模型返回：finish_reason={response.choices[0].finish_reason}, iteration={iteration_count}")
+
         # 最终非 tool_calls 的回复也加入历史
         return response
 
