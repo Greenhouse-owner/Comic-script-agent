@@ -1,0 +1,17 @@
+{
+  "timestamp": "2026-05-10T02:19:34.023832",
+  "total_duration_seconds": 1851.7282230854034,
+  "timeout_per_step": 300,
+  "results": [
+    {
+      "case_id": "case_02",
+      "case_name": "学校操场的外星信号",
+      "success": true
+    },
+    {
+      "case_id": "case_03",
+      "case_name": "旧教学楼的黑板留言",
+      "success": true
+    }
+  ]
+}

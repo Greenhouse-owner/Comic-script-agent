@@ -5,50 +5,52 @@
   "beats": [
     {
       "beat_id": "b01",
-      "summary": "夜晚灯塔内的孤独与思索",
+      "summary": "米娅孤独地在灯塔内思考，展现她的孤独与渴望。",
       "source_script_range": "场景1：灯塔内的孤独",
       "story_function": "setup",
       "emotional_tension": 1,
       "visual_importance": 1,
       "must_show": [
-        "米娅的孤独表情",
-        "灯塔的夜景"
+        "米娅的表情",
+        "灯塔内环境"
       ]
     },
     {
       "beat_id": "b02",
-      "summary": "米娅在灯塔外发现神秘光点",
+      "summary": "米娅走到灯塔外，观察神秘的光点，激发好奇心。",
       "source_script_range": "场景2：海边的发现",
       "story_function": "conflict",
       "emotional_tension": 2,
       "visual_importance": 1,
       "must_show": [
-        "海面反射月光",
-        "米娅的兴奋表情"
+        "海面反光",
+        "米娅的表情",
+        "沙滩环境"
       ]
     },
     {
       "beat_id": "b03",
-      "summary": "星鱼指引米娅追随光芒",
+      "summary": "星鱼引导米娅沿光路前行，带出神秘感和探索的动力。",
       "source_script_range": "场景3：星鱼的指引",
       "story_function": "reveal",
       "emotional_tension": 2,
       "visual_importance": 1,
       "must_show": [
         "发光星鱼",
-        "光路的形成"
+        "光路形成",
+        "米娅的动作"
       ]
     },
     {
       "beat_id": "b04",
-      "summary": "米娅探索灯塔内部秘密",
+      "summary": "米娅发现灯塔深处的秘密机器，揭示隐藏的秘密。",
       "source_script_range": "场景4：灯塔深处",
       "story_function": "climax",
       "emotional_tension": 3,
       "visual_importance": 1,
       "must_show": [
-        "古旧门的开启",
-        "机械装置的细节"
+        "旧门、机械装置",
+        "米娅的表情"
       ]
     }
   ],
@@ -59,18 +61,18 @@
         "b01"
       ],
       "page_function": "establishing",
-      "emotional_goal": "营造孤独与神秘的气氛",
+      "emotional_goal": "营造孤独沉思的氛围，建立主角的背景",
       "panel_count": 4,
       "density": "low",
-      "page_turn_hook": "灯塔夜景引发好奇"
+      "page_turn_hook": ""
     },
     {
       "page": 2,
       "beats": [
         "b02"
       ],
-      "page_function": "conflict",
-      "emotional_goal": "激发探索欲望",
+      "page_function": "exploration",
+      "emotional_goal": "激发好奇与期待",
       "panel_count": 4,
       "density": "medium",
       "page_turn_hook": "神秘光点逐渐靠近"
@@ -80,11 +82,11 @@
       "beats": [
         "b03"
       ],
-      "page_function": "reveal",
-      "emotional_goal": "增强奇幻感与好奇心",
+      "page_function": "discovery",
+      "emotional_goal": "增强神秘感，引导转变",
       "panel_count": 4,
       "density": "medium",
-      "page_turn_hook": "光路引向灯塔深处"
+      "page_turn_hook": "光路逐渐清晰"
     },
     {
       "page": 4,
@@ -92,7 +94,7 @@
         "b04"
       ],
       "page_function": "climax",
-      "emotional_goal": "营造悬疑和紧张感",
+      "emotional_goal": "揭示灯塔秘密，激发冲突",
       "panel_count": 4,
       "density": "high",
       "page_turn_hook": ""
@@ -107,8 +109,8 @@
           "beat_id": "b01",
           "size": "wide_large",
           "relative_area": 0.4,
-          "shot_type": "远景",
-          "purpose": "建立夜景环境",
+          "shot_type": "全景",
+          "purpose": "建立孤独氛围",
           "reading_order": 1
         },
         {
@@ -116,8 +118,8 @@
           "beat_id": "b01",
           "size": "medium",
           "relative_area": 0.2,
-          "shot_type": "特写",
-          "purpose": "表现米娅内心孤独",
+          "shot_type": "近景",
+          "purpose": "突出主角表情",
           "reading_order": 2
         },
         {
@@ -125,17 +127,17 @@
           "beat_id": "b01",
           "size": "medium",
           "relative_area": 0.2,
-          "shot_type": "中景",
-          "purpose": "补充灯塔环境",
+          "shot_type": "近景",
+          "purpose": "灯塔内部环境",
           "reading_order": 3
         },
         {
           "panel_id": "p01_04",
           "beat_id": "b01",
-          "size": "small",
+          "size": "medium",
           "relative_area": 0.2,
           "shot_type": "特写",
-          "purpose": "突出灯塔细节",
+          "purpose": "书页翻动细节",
           "reading_order": 4
         }
       ]
@@ -146,28 +148,28 @@
         {
           "panel_id": "p02_01",
           "beat_id": "b02",
-          "size": "wide_large",
-          "relative_area": 0.4,
+          "size": "medium",
+          "relative_area": 0.3,
           "shot_type": "中景",
-          "purpose": "表现海边景色与氛围",
+          "purpose": "展示米娅观察环境",
           "reading_order": 1
         },
         {
           "panel_id": "p02_02",
           "beat_id": "b02",
-          "size": "medium",
+          "size": "small",
           "relative_area": 0.2,
           "shot_type": "特写",
-          "purpose": "突出月光反射",
+          "purpose": "海面反光",
           "reading_order": 2
         },
         {
           "panel_id": "p02_03",
           "beat_id": "b02",
           "size": "medium",
-          "relative_area": 0.2,
+          "relative_area": 0.3,
           "shot_type": "中景",
-          "purpose": "表现米娅兴奋的表情",
+          "purpose": "米娅奔跑沙滩",
           "reading_order": 3
         },
         {
@@ -175,8 +177,8 @@
           "beat_id": "b02",
           "size": "small",
           "relative_area": 0.2,
-          "shot_type": "reaction_closeup",
-          "purpose": "捕捉反应细节",
+          "shot_type": "特写",
+          "purpose": "米娅兴奋的表情",
           "reading_order": 4
         }
       ]
@@ -187,38 +189,29 @@
         {
           "panel_id": "p03_01",
           "beat_id": "b03",
-          "size": "wide_large",
-          "relative_area": 0.4,
-          "shot_type": "中景",
-          "purpose": "表现星鱼环绕",
+          "size": "small",
+          "relative_area": 0.2,
+          "shot_type": "特写",
+          "purpose": "星鱼光芒",
           "reading_order": 1
         },
         {
           "panel_id": "p03_02",
           "beat_id": "b03",
           "size": "medium",
-          "relative_area": 0.2,
-          "shot_type": "reaction_closeup",
-          "purpose": "表现米娅触碰水面",
+          "relative_area": 0.4,
+          "shot_type": "中景",
+          "purpose": "光路形成",
           "reading_order": 2
         },
         {
           "panel_id": "p03_03",
           "beat_id": "b03",
           "size": "medium",
-          "relative_area": 0.2,
-          "shot_type": "wide",
-          "purpose": "追随光路跑向灯塔底层",
+          "relative_area": 0.4,
+          "shot_type": "全景",
+          "purpose": "沿光路前行",
           "reading_order": 3
-        },
-        {
-          "panel_id": "p03_04",
-          "beat_id": "b03",
-          "size": "small",
-          "relative_area": 0.2,
-          "shot_type": "reaction_closeup",
-          "purpose": "强调光芒吸引",
-          "reading_order": 4
         }
       ]
     },
@@ -228,38 +221,20 @@
         {
           "panel_id": "p04_01",
           "beat_id": "b04",
-          "size": "wide_large",
-          "relative_area": 0.4,
+          "size": "large",
+          "relative_area": 0.5,
           "shot_type": "近景",
-          "purpose": "表现旧门开启",
+          "purpose": "旧门和机械装置细节",
           "reading_order": 1
         },
         {
           "panel_id": "p04_02",
           "beat_id": "b04",
-          "size": "medium",
-          "relative_area": 0.2,
-          "shot_type": "reaction_closeup",
-          "purpose": "表达米娅惊讶",
+          "size": "large",
+          "relative_area": 0.5,
+          "shot_type": "中景",
+          "purpose": "米娅观察机械装置",
           "reading_order": 2
-        },
-        {
-          "panel_id": "p04_03",
-          "beat_id": "b04",
-          "size": "medium",
-          "relative_area": 0.2,
-          "shot_type": "wide",
-          "purpose": "展示内部巨大机械装置",
-          "reading_order": 3
-        },
-        {
-          "panel_id": "p04_04",
-          "beat_id": "b04",
-          "size": "small",
-          "relative_area": 0.2,
-          "shot_type": "reaction_closeup",
-          "purpose": "突显机械细节",
-          "reading_order": 4
         }
       ]
     }
@@ -269,25 +244,25 @@
       "target": "b01",
       "tension_level": 1,
       "pacing": "slow",
-      "layout_advice": "使用宽广的景别与静谧色调，建立孤独与悬疑氛围"
+      "layout_advice": "保持静谧、孤独感，镜头简洁突出角色"
     },
     {
       "target": "b02",
       "tension_level": 2,
       "pacing": "normal",
-      "layout_advice": "表现海景与神秘光点，引导观众情绪转向探索"
+      "layout_advice": "切换至激动和神秘的视觉效果，强调光影互动"
     },
     {
       "target": "b03",
       "tension_level": 2,
       "pacing": "normal",
-      "layout_advice": "加强奇幻感，利用变焦和光线突出指引力量"
+      "layout_advice": "使用近景特写星鱼和引导光路，增强神秘感"
     },
     {
       "target": "b04",
       "tension_level": 3,
       "pacing": "fast",
-      "layout_advice": "采用高密度和夸张构图，增强紧张与悬疑感"
+      "layout_advice": "用大格子实现高潮场景，突出机械细节，营造紧张气氛"
     }
   ],
   "warnings": [],

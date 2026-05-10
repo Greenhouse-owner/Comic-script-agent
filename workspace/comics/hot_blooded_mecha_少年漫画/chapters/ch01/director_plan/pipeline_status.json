@@ -1,0 +1,27 @@
+{
+  "project_id": "hot_blooded_mecha_少年漫画",
+  "chapter_id": "ch01",
+  "current_stage": "submitted",
+  "stages": {
+    "context_planner": {
+      "status": "completed",
+      "output": "hot_blooded_mecha_少年漫画/chapters/ch01/director_plan/selected_context.json",
+      "warnings": []
+    },
+    "storyboard_planner": {
+      "status": "completed",
+      "output": "hot_blooded_mecha_少年漫画/chapters/ch01/director_plan/storyboard_plan.json",
+      "warnings": [
+        "剧本中缺少详细场面描述，建议补充具体动作与对话以丰富分镜。",
+        "角色信息有限，建议补充角色视觉特征以明确视觉锚点。",
+        "环境描述需要更具体，以支持场景布局。"
+      ]
+    },
+    "draft_writer": {
+      "status": "completed",
+      "output": "hot_blooded_mecha_少年漫画/chapters/ch01/storyboard.md",
+      "warnings": []
+    }
+  },
+  "errors": []
+}

@@ -1,0 +1,23 @@
+{
+  "project_id": "serene_days",
+  "chapter_id": "ch01",
+  "current_stage": "submitted",
+  "stages": {
+    "context_planner": {
+      "status": "completed",
+      "output": "serene_days/chapters/ch01/director_plan/selected_context.json",
+      "warnings": []
+    },
+    "storyboard_planner": {
+      "status": "completed",
+      "output": "serene_days/chapters/ch01/director_plan/storyboard_plan.json",
+      "warnings": []
+    },
+    "draft_writer": {
+      "status": "completed",
+      "output": "serene_days/chapters/ch01/storyboard.md",
+      "warnings": []
+    }
+  },
+  "errors": []
+}

@@ -3,7 +3,9 @@
   "chapter_id": "ch01",
   "script_path": "story_20260506_134829/chapters/ch01/script.md",
   "initial_selected_files": {
-    "characters": [],
+    "characters": [
+      "story_20260506_134829/state/characters/米娅.md"
+    ],
     "environments": []
   },
   "additional_selected_files": {
@@ -11,17 +13,19 @@
     "environments": []
   },
   "final_selected_files": {
-    "characters": [],
+    "characters": [
+      "story_20260506_134829/state/characters/米娅.md"
+    ],
     "environments": []
   },
-  "missing_context_notes": [
-    "剧本中明确提到灯塔内、海边、沙滩和灯塔的场景，相关环境文件已列出。唯一角色为米娅，相关角色文件已列出。采用已知角色文件，满足场景需求。"
+  "missing_context_notes": [],
+  "warnings": [
+    "模型选择中包含非法或不可用路径，已由代码过滤。"
   ],
-  "warnings": [],
   "selection_rounds": [
     {
       "round": 1,
-      "reason": "根据剧本显式出现的人物、地点、道具和情节功能选择。"
+      "reason": "根据剧本中明确出现的人物（米娅）和场景（灯塔）选择。"
     }
   ],
   "skills_used": [

@@ -1,0 +1,426 @@
+{
+  "task_id": "task_f6d65755",
+  "agent": "architect_bot",
+  "project_id": "少年科幻冒险",
+  "chapter_id": "ch01",
+  "task_type": "architect_delivery",
+  "status": "approved",
+  "steps": [
+    {
+      "id": "step_1",
+      "description": "建立故事级事实源",
+      "tool": "write_file",
+      "inputs": {
+        "file_path": "少年科幻冒险/story_bible.md",
+        "skill": "story-planner"
+      },
+      "expected_output": "story_bible",
+      "skill": "story-planner",
+      "input_artifacts": [
+        {
+          "artifact_type": "brief"
+        },
+        {
+          "artifact_type": "story_direction"
+        }
+      ],
+      "output_artifacts": [
+        {
+          "artifact_type": "story_bible",
+          "producer_skill": "story-planner",
+          "validators": [
+            "exists",
+            "non_empty",
+            "inherits_user_facts"
+          ],
+          "path": "少年科幻冒险/story_bible.md"
+        }
+      ],
+      "validation_rules": [
+        "exists",
+        "non_empty",
+        "inherits_user_facts"
+      ],
+      "purpose": "建立故事级事实源"
+    },
+    {
+      "id": "step_2",
+      "description": "生成全章节结构与章节索引",
+      "tool": "write_file",
+      "inputs": {
+        "file_path": "少年科幻冒险/chapter_outlines.md",
+        "skill": "story-planner"
+      },
+      "expected_output": "chapter_outlines",
+      "skill": "story-planner",
+      "input_artifacts": [
+        {
+          "artifact_type": "story_bible"
+        },
+        {
+          "artifact_type": "story_direction"
+        }
+      ],
+      "output_artifacts": [
+        {
+          "artifact_type": "chapter_outlines",
+          "producer_skill": "story-planner",
+          "validators": [
+            "exists",
+            "non_empty",
+            "chapter_range_complete"
+          ],
+          "path": "少年科幻冒险/chapter_outlines.md"
+        }
+      ],
+      "depends_on": [
+        "step_1"
+      ],
+      "validation_rules": [
+        "exists",
+        "non_empty",
+        "chapter_range_complete"
+      ],
+      "purpose": "生成全章节结构与章节索引"
+    },
+    {
+      "id": "step_3",
+      "description": "生成 ch01 章节细纲",
+      "tool": "write_file",
+      "inputs": {
+        "file_path": "少年科幻冒险/chapters/ch01/outline.md",
+        "skill": "story-planner"
+      },
+      "expected_output": "chapter_outline",
+      "skill": "story-planner",
+      "input_artifacts": [
+        {
+          "artifact_type": "chapter_outlines"
+        }
+      ],
+      "output_artifacts": [
+        {
+          "artifact_type": "chapter_outline",
+          "producer_skill": "story-planner",
+          "validators": [
+            "exists",
+            "non_empty",
+            "matches_chapter_id"
+          ],
+          "path": "少年科幻冒险/chapters/ch01/outline.md",
+          "chapter_id": "ch01"
+        }
+      ],
+      "depends_on": [
+        "step_2"
+      ],
+      "validation_rules": [
+        "exists",
+        "non_empty",
+        "matches_chapter_id"
+      ],
+      "purpose": "生成 ch01 章节细纲"
+    },
+    {
+      "id": "step_4",
+      "description": "建立角色事实源",
+      "tool": "write_file",
+      "inputs": {
+        "path_glob": "少年科幻冒险/state/characters/*.md",
+        "skill": "character-builder"
+      },
+      "expected_output": "character_cards",
+      "skill": "character-builder",
+      "input_artifacts": [
+        {
+          "artifact_type": "story_bible"
+        },
+        {
+          "artifact_type": "chapter_outlines"
+        }
+      ],
+      "output_artifacts": [
+        {
+          "artifact_type": "character_cards",
+          "producer_skill": "character-builder",
+          "validators": [
+            "exists",
+            "non_empty",
+            "visual_anchors_present"
+          ],
+          "path_glob": "少年科幻冒险/state/characters/*.md",
+          "path": "少年科幻冒险/state/characters/__planned__.md"
+        }
+      ],
+      "depends_on": [
+        "step_1",
+        "step_2"
+      ],
+      "validation_rules": [
+        "exists",
+        "non_empty",
+        "visual_anchors_present"
+      ],
+      "purpose": "建立角色事实源"
+    },
+    {
+      "id": "step_5",
+      "description": "建立场景事实源",
+      "tool": "write_file",
+      "inputs": {
+        "path_glob": "少年科幻冒险/state/environments/*.md",
+        "skill": "environment-builder"
+      },
+      "expected_output": "environment_cards",
+      "skill": "environment-builder",
+      "input_artifacts": [
+        {
+          "artifact_type": "story_bible"
+        },
+        {
+          "artifact_type": "chapter_outlines"
+        }
+      ],
+      "output_artifacts": [
+        {
+          "artifact_type": "environment_cards",
+          "producer_skill": "environment-builder",
+          "validators": [
+            "exists",
+            "non_empty",
+            "visual_anchors_present"
+          ],
+          "path_glob": "少年科幻冒险/state/environments/*.md",
+          "path": "少年科幻冒险/state/environments/__planned__.md"
+        }
+      ],
+      "depends_on": [
+        "step_1",
+        "step_2"
+      ],
+      "validation_rules": [
+        "exists",
+        "non_empty",
+        "visual_anchors_present"
+      ],
+      "purpose": "建立场景事实源"
+    },
+    {
+      "id": "step_6",
+      "description": "生成 ch01 章节剧本",
+      "tool": "write_file",
+      "inputs": {
+        "file_path": "少年科幻冒险/chapters/ch01/script.md",
+        "skill": "chapter-expander"
+      },
+      "expected_output": "chapter_script",
+      "skill": "chapter-expander",
+      "input_artifacts": [
+        {
+          "artifact_type": "story_bible"
+        },
+        {
+          "artifact_type": "chapter_outline"
+        },
+        {
+          "artifact_type": "character_cards"
+        },
+        {
+          "artifact_type": "environment_cards"
+        }
+      ],
+      "output_artifacts": [
+        {
+          "artifact_type": "chapter_script",
+          "producer_skill": "chapter-expander",
+          "validators": [
+            "exists",
+            "non_empty",
+            "inherits_chapter_outline",
+            "registered_roles_only",
+            "registered_environments_only"
+          ],
+          "path": "少年科幻冒险/chapters/ch01/script.md",
+          "chapter_id": "ch01"
+        }
+      ],
+      "depends_on": [
+        "step_1",
+        "step_3",
+        "step_4",
+        "step_5"
+      ],
+      "validation_rules": [
+        "exists",
+        "non_empty",
+        "inherits_chapter_outline",
+        "registered_roles_only",
+        "registered_environments_only"
+      ],
+      "purpose": "生成 ch01 章节剧本"
+    }
+  ],
+  "risk_checklist": [
+    "计划必须由目标产物反推所需输入",
+    "跳过已存在且非空的产物，避免重复覆盖",
+    "所有输出路径必须符合 Architect artifact contract",
+    "正式剧本必须在角色与场景事实源之后生成"
+  ],
+  "requires_user_approval": false,
+  "created_at": "2026-05-09T20:17:12.889583",
+  "planning_mode": "architect_dynamic_v1",
+  "goal": {
+    "goal_type": "create_chapter_script",
+    "project_id": "少年科幻冒险",
+    "chapter_ids": [
+      "ch01"
+    ],
+    "target_artifacts": [
+      "story_bible",
+      "chapter_outlines",
+      "chapter_outline",
+      "character_cards",
+      "environment_cards",
+      "chapter_script"
+    ]
+  },
+  "project_state": {
+    "project_id": "少年科幻冒险",
+    "brief": {
+      "path": "少年科幻冒险/brief.md",
+      "exists": true,
+      "non_empty": true,
+      "bytes": 171
+    },
+    "story_direction": {
+      "path": "少年科幻冒险/story_direction.md",
+      "exists": false,
+      "non_empty": false,
+      "bytes": 0
+    },
+    "story_bible": {
+      "path": "少年科幻冒险/story_bible.md",
+      "exists": false,
+      "non_empty": false,
+      "bytes": 0
+    },
+    "chapter_outlines": {
+      "path": "少年科幻冒险/chapter_outlines.md",
+      "exists": false,
+      "non_empty": false,
+      "bytes": 0
+    },
+    "chapters": {
+      "ch01": {
+        "outline": {
+          "path": "少年科幻冒险/chapters/ch01/outline.md",
+          "exists": false,
+          "non_empty": false,
+          "bytes": 0
+        },
+        "script": {
+          "path": "少年科幻冒险/chapters/ch01/script.md",
+          "exists": false,
+          "non_empty": false,
+          "bytes": 0
+        }
+      }
+    },
+    "characters": {
+      "count": 0,
+      "paths": [],
+      "exists": false
+    },
+    "environments": {
+      "count": 0,
+      "paths": [],
+      "exists": false
+    },
+    "missing_by_chapter": {
+      "ch01": [
+        "story_bible",
+        "chapter_outlines",
+        "chapter_outline",
+        "character_cards",
+        "environment_cards",
+        "chapter_script"
+      ]
+    }
+  },
+  "target_artifacts": [
+    "story_bible",
+    "chapter_outlines",
+    "chapter_outline",
+    "character_cards",
+    "environment_cards",
+    "chapter_script"
+  ],
+  "deliverables": [
+    {
+      "artifact_type": "story_bible",
+      "producer_skill": "story-planner",
+      "validators": [
+        "exists",
+        "non_empty",
+        "inherits_user_facts"
+      ],
+      "path": "少年科幻冒险/story_bible.md"
+    },
+    {
+      "artifact_type": "chapter_outlines",
+      "producer_skill": "story-planner",
+      "validators": [
+        "exists",
+        "non_empty",
+        "chapter_range_complete"
+      ],
+      "path": "少年科幻冒险/chapter_outlines.md"
+    },
+    {
+      "artifact_type": "chapter_outline",
+      "producer_skill": "story-planner",
+      "validators": [
+        "exists",
+        "non_empty",
+        "matches_chapter_id"
+      ],
+      "path": "少年科幻冒险/chapters/ch01/outline.md",
+      "chapter_id": "ch01"
+    },
+    {
+      "artifact_type": "character_cards",
+      "producer_skill": "character-builder",
+      "validators": [
+        "exists",
+        "non_empty",
+        "visual_anchors_present"
+      ],
+      "path_glob": "少年科幻冒险/state/characters/*.md",
+      "path": "少年科幻冒险/state/characters/__planned__.md"
+    },
+    {
+      "artifact_type": "environment_cards",
+      "producer_skill": "environment-builder",
+      "validators": [
+        "exists",
+        "non_empty",
+        "visual_anchors_present"
+      ],
+      "path_glob": "少年科幻冒险/state/environments/*.md",
+      "path": "少年科幻冒险/state/environments/__planned__.md"
+    },
+    {
+      "artifact_type": "chapter_script",
+      "producer_skill": "chapter-expander",
+      "validators": [
+        "exists",
+        "non_empty",
+        "inherits_chapter_outline",
+        "registered_roles_only",
+        "registered_environments_only"
+      ],
+      "path": "少年科幻冒险/chapters/ch01/script.md",
+      "chapter_id": "ch01"
+    }
+  ]
+}

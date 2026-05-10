@@ -1,0 +1,31 @@
+{
+  "timestamp": "2026-05-09T20:35:46.292835",
+  "total_duration_seconds": 2987.796880722046,
+  "results": [
+    {
+      "case_id": "case_01",
+      "case_name": "灯塔女孩与发光星鱼",
+      "success": true
+    },
+    {
+      "case_id": "case_05",
+      "case_name": "失眠少女与收梦猫",
+      "success": true
+    },
+    {
+      "case_id": "case_03",
+      "case_name": "旧教学楼的黑板留言",
+      "success": true
+    },
+    {
+      "case_id": "case_02",
+      "case_name": "学校操场的外星信号",
+      "success": true
+    },
+    {
+      "case_id": "case_04",
+      "case_name": "地下机甲比赛",
+      "success": true
+    }
+  ]
+}
