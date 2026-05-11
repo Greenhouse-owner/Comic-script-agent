@@ -1,0 +1,45 @@
+{
+  "project_id": "story_20260511_160814",
+  "chapter_id": "ch01",
+  "script_path": "story_20260511_160814/chapters/ch01/script.md",
+  "initial_selected_files": {
+    "characters": [
+      "story_20260511_160814/state/characters/普通高中生勇敢探索.md",
+      "story_20260511_160814/state/characters/姓名.md",
+      "story_20260511_160814/state/characters/动机.md",
+      "story_20260511_160814/state/characters/立场.md"
+    ],
+    "environments": [
+      "story_20260511_160814/state/environments/主要场景.md"
+    ]
+  },
+  "additional_selected_files": {
+    "characters": [],
+    "environments": []
+  },
+  "final_selected_files": {
+    "characters": [
+      "story_20260511_160814/state/characters/普通高中生勇敢探索.md",
+      "story_20260511_160814/state/characters/姓名.md",
+      "story_20260511_160814/state/characters/动机.md",
+      "story_20260511_160814/state/characters/立场.md"
+    ],
+    "environments": [
+      "story_20260511_160814/state/environments/主要场景.md"
+    ]
+  },
+  "missing_context_notes": [
+    "当前已选择的角色和场景文件与剧本中明确提及的人物和地点相符，无需补充。"
+  ],
+  "warnings": [],
+  "selection_rounds": [
+    {
+      "round": 1,
+      "reason": "根据剧本显式出现的人物、地点、道具和情节功能选择。"
+    }
+  ],
+  "skills_used": [
+    "director-context-planner"
+  ],
+  "planner_mode": "model_first"
+}

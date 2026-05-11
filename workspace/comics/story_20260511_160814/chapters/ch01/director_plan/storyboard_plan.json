@@ -1,0 +1,316 @@
+{
+  "chapter_id": "ch01",
+  "recommended_page_count": 3,
+  "total_panel_count": 10,
+  "beats": [
+    {
+      "beat_id": "b01",
+      "summary": "# ch01 剧本",
+      "source_script_range": "chunk_1",
+      "story_function": "setup",
+      "emotional_tension": 3,
+      "visual_importance": 3,
+      "must_show": []
+    },
+    {
+      "beat_id": "b02",
+      "summary": "## 使用技能 - story-planner - chapter-expander",
+      "source_script_range": "chunk_2",
+      "story_function": "progression",
+      "emotional_tension": 3,
+      "visual_importance": 3,
+      "must_show": []
+    },
+    {
+      "beat_id": "b03",
+      "summary": "## 技能依据摘要 --- name: story-planner description: 把用户的故事想法扩展为结构化大纲 tags: [story, ou...",
+      "source_script_range": "chunk_3",
+      "story_function": "progression",
+      "emotional_tension": 3,
+      "visual_importance": 3,
+      "must_show": []
+    },
+    {
+      "beat_id": "b04",
+      "summary": "## 输入 - **故事梗概**：用户提供的 1-3",
+      "source_script_range": "chunk_4",
+      "story_function": "progression",
+      "emotional_tension": 3,
+      "visual_importance": 3,
+      "must_show": []
+    },
+    {
+      "beat_id": "b05",
+      "summary": "## 目标 基于 story_20260511_160814/story_direction.md 生成完整创作产物（story_bible、章纲、角色卡、场景...",
+      "source_script_range": "chunk_5",
+      "story_function": "progression",
+      "emotional_tension": 3,
+      "visual_importance": 3,
+      "must_show": []
+    },
+    {
+      "beat_id": "b06",
+      "summary": "## 用户事实依据 - 继承用户给定的 ch01 事实：高中生许然每天放学后都会路过废弃的旧教学楼，某天他发现黑板上出现了一行神秘的留言，署名是三年前失踪的学姐...",
+      "source_script_range": "chunk_6",
+      "story_function": "climax",
+      "emotional_tension": 5,
+      "visual_importance": 5,
+      "must_show": []
+    },
+    {
+      "beat_id": "b07",
+      "summary": "## 场景 1 普通高中生勇敢探索 在 主要场景 根据上述用户事实依据展开本章事件。",
+      "source_script_range": "chunk_7",
+      "story_function": "progression",
+      "emotional_tension": 3,
+      "visual_importance": 3,
+      "must_show": []
+    },
+    {
+      "beat_id": "b08",
+      "summary": "## 角色动机 普通高中生勇敢探索 的行动必须继承用户事实依据中已明确的目标、线索与风险；缺失项标记为待补齐，不得由代码发明。",
+      "source_script_range": "chunk_8",
+      "story_function": "progression",
+      "emotional_tension": 3,
+      "visual_importance": 3,
+      "must_show": []
+    },
+    {
+      "beat_id": "b09",
+      "summary": "## 扩写约束 --- name: chapter-expander description: 将章节规划扩写为详细的文字剧本 tags: [chapter, ...",
+      "source_script_range": "chunk_9",
+      "story_function": "progression",
+      "emotional_tension": 3,
+      "visual_importance": 3,
+      "must_show": []
+    },
+    {
+      "beat_id": "b10",
+      "summary": "## 输入 - **章节规划**：来自 story",
+      "source_script_range": "chunk_10",
+      "story_function": "progression",
+      "emotional_tension": 3,
+      "visual_importance": 3,
+      "must_show": []
+    }
+  ],
+  "page_plan": [
+    {
+      "page": 1,
+      "beats": [
+        "b01",
+        "b02",
+        "b03",
+        "b04"
+      ],
+      "page_function": "story_progression",
+      "emotional_goal": "推进剧情并保持阅读清晰",
+      "panel_count": 4,
+      "density": "medium",
+      "page_turn_hook": "下一页继续推进关键情节"
+    },
+    {
+      "page": 2,
+      "beats": [
+        "b05",
+        "b06",
+        "b07",
+        "b08"
+      ],
+      "page_function": "climax",
+      "emotional_goal": "强化冲突与视觉重点",
+      "panel_count": 4,
+      "density": "medium",
+      "page_turn_hook": "下一页继续推进关键情节"
+    },
+    {
+      "page": 3,
+      "beats": [
+        "b09",
+        "b10"
+      ],
+      "page_function": "story_progression",
+      "emotional_goal": "推进剧情并保持阅读清晰",
+      "panel_count": 2,
+      "density": "medium",
+      "page_turn_hook": ""
+    }
+  ],
+  "layout_plan": [
+    {
+      "page": 1,
+      "panels": [
+        {
+          "panel_id": "p01_01",
+          "beat_id": "b01",
+          "size": "wide_large",
+          "relative_area": 0.4,
+          "shot_type": "远景",
+          "purpose": "# ch01 剧本",
+          "reading_order": 1
+        },
+        {
+          "panel_id": "p01_02",
+          "beat_id": "b02",
+          "size": "medium",
+          "relative_area": 0.2,
+          "shot_type": "中景",
+          "purpose": "## 使用技能 - story-planner - chapter-expander",
+          "reading_order": 2
+        },
+        {
+          "panel_id": "p01_03",
+          "beat_id": "b03",
+          "size": "medium",
+          "relative_area": 0.2,
+          "shot_type": "近景",
+          "purpose": "## 技能依据摘要 --- name: story-planner description: 把用户的故事想法扩展为结构化大纲 tags: [story, ou...",
+          "reading_order": 3
+        },
+        {
+          "panel_id": "p01_04",
+          "beat_id": "b04",
+          "size": "medium",
+          "relative_area": 0.2,
+          "shot_type": "中景",
+          "purpose": "## 输入 - **故事梗概**：用户提供的 1-3",
+          "reading_order": 4
+        }
+      ]
+    },
+    {
+      "page": 2,
+      "panels": [
+        {
+          "panel_id": "p02_01",
+          "beat_id": "b05",
+          "size": "wide_large",
+          "relative_area": 0.4,
+          "shot_type": "远景",
+          "purpose": "## 目标 基于 story_20260511_160814/story_direction.md 生成完整创作产物（story_bible、章纲、角色卡、场景...",
+          "reading_order": 1
+        },
+        {
+          "panel_id": "p02_02",
+          "beat_id": "b06",
+          "size": "large",
+          "relative_area": 0.4,
+          "shot_type": "中景",
+          "purpose": "## 用户事实依据 - 继承用户给定的 ch01 事实：高中生许然每天放学后都会路过废弃的旧教学楼，某天他发现黑板上出现了一行神秘的留言，署名是三年前失踪的学姐...",
+          "reading_order": 2
+        },
+        {
+          "panel_id": "p02_03",
+          "beat_id": "b07",
+          "size": "medium",
+          "relative_area": 0.2,
+          "shot_type": "近景",
+          "purpose": "## 场景 1 普通高中生勇敢探索 在 主要场景 根据上述用户事实依据展开本章事件。",
+          "reading_order": 3
+        },
+        {
+          "panel_id": "p02_04",
+          "beat_id": "b08",
+          "size": "medium",
+          "relative_area": 0.2,
+          "shot_type": "中景",
+          "purpose": "## 角色动机 普通高中生勇敢探索 的行动必须继承用户事实依据中已明确的目标、线索与风险；缺失项标记为待补齐，不得由代码发明。",
+          "reading_order": 4
+        }
+      ]
+    },
+    {
+      "page": 3,
+      "panels": [
+        {
+          "panel_id": "p03_01",
+          "beat_id": "b09",
+          "size": "wide_large",
+          "relative_area": 0.4,
+          "shot_type": "远景",
+          "purpose": "## 扩写约束 --- name: chapter-expander description: 将章节规划扩写为详细的文字剧本 tags: [chapter, ...",
+          "reading_order": 1
+        },
+        {
+          "panel_id": "p03_02",
+          "beat_id": "b10",
+          "size": "medium",
+          "relative_area": 0.2,
+          "shot_type": "中景",
+          "purpose": "## 输入 - **章节规划**：来自 story",
+          "reading_order": 2
+        }
+      ]
+    }
+  ],
+  "tension_strategy": [
+    {
+      "target": "b01",
+      "tension_level": 3,
+      "pacing": "normal",
+      "layout_advice": "保持清晰阅读顺序。"
+    },
+    {
+      "target": "b02",
+      "tension_level": 3,
+      "pacing": "normal",
+      "layout_advice": "保持清晰阅读顺序。"
+    },
+    {
+      "target": "b03",
+      "tension_level": 3,
+      "pacing": "normal",
+      "layout_advice": "保持清晰阅读顺序。"
+    },
+    {
+      "target": "b04",
+      "tension_level": 3,
+      "pacing": "normal",
+      "layout_advice": "保持清晰阅读顺序。"
+    },
+    {
+      "target": "b05",
+      "tension_level": 3,
+      "pacing": "normal",
+      "layout_advice": "保持清晰阅读顺序。"
+    },
+    {
+      "target": "b06",
+      "tension_level": 5,
+      "pacing": "fast",
+      "layout_advice": "使用较大格强调转折。"
+    },
+    {
+      "target": "b07",
+      "tension_level": 3,
+      "pacing": "normal",
+      "layout_advice": "保持清晰阅读顺序。"
+    },
+    {
+      "target": "b08",
+      "tension_level": 3,
+      "pacing": "normal",
+      "layout_advice": "保持清晰阅读顺序。"
+    },
+    {
+      "target": "b09",
+      "tension_level": 3,
+      "pacing": "normal",
+      "layout_advice": "保持清晰阅读顺序。"
+    },
+    {
+      "target": "b10",
+      "tension_level": 3,
+      "pacing": "normal",
+      "layout_advice": "保持清晰阅读顺序。"
+    }
+  ],
+  "warnings": [
+    "当前已选择的角色和场景文件与剧本中明确提及的人物和地点相符，无需补充。"
+  ],
+  "skills_used": [
+    "director-storyboard-planner",
+    "panel-director"
+  ],
+  "planner_mode": "deterministic_fallback_mvp"
+}

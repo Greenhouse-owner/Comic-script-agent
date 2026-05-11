@@ -281,6 +281,24 @@ class TeammateManager:
             if self._is_architect(name):
                 self._debug_architect("model_task_after", f"模型任务响应完成：output_len={len(output)}", event_meta)
             conversation_history.append({"role": "assistant", "content": output})
+
+            # 检查动态计划的必要产出物是否已生成
+            if self._is_architect(name) and self._should_use_architect_dynamic_plan(metadata):
+                missing = self._check_plan_deliverables(plan_result.get("plan", {}))
+                if missing:
+                    self._emit_event(name, "deliverables_incomplete",
+                                     f"产出物不完整：{missing}", event_meta)
+                    self.message_bus.send(name, "lead", {
+                        "type": "task_result",
+                        "task_id": task["id"],
+                        "assignee": name,
+                        "title": task["title"],
+                        "success": False,
+                        "error": f"产出物不完整：{missing}",
+                        "metadata": task.get("metadata", {}),
+                    })
+                    return {"success": False, "error": f"deliverables_incomplete: {missing}"}
+
             self.message_bus.send(name, "lead", {
                 "type": "task_result",
                 "task_id": task["id"],
@@ -342,7 +360,7 @@ class TeammateManager:
             "2. 每个 step 只能使用 step.tool 指定的工具；当前 dynamic plan 只允许 write_file。",
             "3. 写入文件前，必须用 read_file 读取该 step.input_artifacts 中列出的已有输入文件；如果需要技能手册，先调用 load_skill。",
             "4. 写入内容必须继承用户事实源，不得编造已知事实；缺失内容要标注待补齐。",
-            "5. 每个 write_file 的 file_path 必须等于 step.output_artifacts[0].path 或 step.inputs.file_path。",
+            "5. 每个 write_file 的 file_path 必须是具体文件路径。如果 step.inputs 中有 path_glob（含 *），你需要为每个实体生成独立的 write_file 调用，路径格式为 `{project_id}/state/characters/{角色名}.md` 或 `{project_id}/state/environments/{场景名}.md`。不要把 path_glob 直接传给 write_file。如果 step.inputs 中有 file_path，直接使用该路径。",
             "6. 完成所有 steps 后，使用 send_message 向 submission_target 发送 submission；如果产物是 chapter_script，也向 Lead 发送 handoff。submission 里必须包含 user_visible_summary，列出本次生成/更新的角色、场景、章纲、细纲、剧本等文件，并提示用户可以查看后继续提建议。",
             "7. 最后调用 idle。",
             "任务 metadata：",
@@ -358,6 +376,19 @@ class TeammateManager:
     @staticmethod
     def _should_use_architect_dynamic_plan(metadata: dict) -> bool:
         return bool(metadata.get("use_dynamic_plan")) or metadata.get("planning_mode") == "architect_dynamic_v1"
+
+    @staticmethod
+    def _check_plan_deliverables(plan: dict) -> list:
+        """检查计划中的产出物是否已实际生成（跳过 glob 占位路径）"""
+        missing = []
+        for step in plan.get("steps", []):
+            for artifact in step.get("output_artifacts", []):
+                path = artifact.get("path")
+                if not path or "*" in path or "__planned__" in path:
+                    continue
+                if not safe_path(path).exists():
+                    missing.append(path)
+        return missing
 
     @staticmethod
     def _architect_goal_from_task(task: dict) -> dict:

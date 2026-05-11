@@ -1,0 +1,25 @@
+{
+  "project_id": "story_20260511_160814",
+  "chapter_id": "ch01",
+  "current_stage": "submitted",
+  "stages": {
+    "context_planner": {
+      "status": "completed",
+      "output": "story_20260511_160814/chapters/ch01/director_plan/selected_context.json",
+      "warnings": []
+    },
+    "storyboard_planner": {
+      "status": "completed",
+      "output": "story_20260511_160814/chapters/ch01/director_plan/storyboard_plan.json",
+      "warnings": [
+        "当前已选择的角色和场景文件与剧本中明确提及的人物和地点相符，无需补充。"
+      ]
+    },
+    "draft_writer": {
+      "status": "completed",
+      "output": "story_20260511_160814/chapters/ch01/storyboard.md",
+      "warnings": []
+    }
+  },
+  "errors": []
+}

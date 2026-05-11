@@ -2273,6 +2273,7 @@ class LeadAgent:
         updated = dict(metadata)
         updated.setdefault("use_dynamic_plan", True)
         updated.setdefault("planning_mode", "architect_dynamic_v1")
+        updated.setdefault("enable_dynamic_plan_executor_fallback", True)
         updated.setdefault("goal_type", "create_chapter_script")
         if chapter_id and not updated.get("chapter_ids"):
             updated["chapter_ids"] = [chapter_id]
